@@ -8,7 +8,7 @@ var gMeme = {
             color: 'black'
         },
         {
-            txt: 'Another line', size: 30,
+            txt: '', size: 30,
             color: 'black'
         }]
 }
@@ -21,14 +21,13 @@ function getImages() {
     return gImgs
 }
 
-function setLineTxt(userTxt) {
-    gMeme.lines[0].txt = userTxt
+function setLineTxt(userTxt, lineNum) {
+    gMeme.lines[lineNum].txt = userTxt
 }
 
 function setImg(elImg) {
-    const elImgNumId = elImg.id.substring(3)
-    const currSelectedImg = gImgs.find(img => img.url.includes(elImgNumId))
-    gMeme.selectedImgId = currSelectedImg.id
+    const elImgNumId = elImg.id.slice(-1)
+    gMeme.selectedImgId = +elImgNumId
 }
 
 function setTxtColor(val) {

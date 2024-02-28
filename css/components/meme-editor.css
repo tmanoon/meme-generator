@@ -35,3 +35,8 @@ button, .user-edits > input[type="color"] {
     content: "\2b";
     font-family: fa;
 }
+
+.user-edits > .switch-line-btn::before {
+    content:"\f363";
+    font-family: fa;
+}

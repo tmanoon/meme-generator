@@ -7,15 +7,18 @@ function renderGallery() {
     const elSecMemeEditor = document.querySelector('.meme-editor')
     if(!elSecMemeEditor.hidden) elSecMemeEditor.hidden = true
     var strHTML = ''
-    strHTML += `<img src="img/1.jpg" id="img1" ontouchstart="onSelectImg(this)" onclick="onSelectImg(this)">
-     <img src="img/2.jpg" id="img2" onclick="onSelectImg(this)">`
+    strHTML += `<img src="img/1.jpg" id="img1"">
+     <img src="img/2.jpg" id="img2">`
     gElGallery.innerHTML = strHTML
 }
 
-function onSelectImg(elImg) {
+function onSelectImg(ev) {
+    ev.stopPropagation()
     const elSecMemeEditor = document.querySelector('.meme-editor')
     elSecMemeEditor.hidden = false
-    setImg(elImg)
+    setImg(ev.target)
     gElGallery.hidden = true
     renderMeme()
 }
+
+// ontouchstart="onSelectImg(this, event)" onclick="onSelectImg(this, event)"

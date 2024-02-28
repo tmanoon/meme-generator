@@ -2,19 +2,17 @@
 
 var gElCanvas = document.querySelector('.canvas')
 var gCtx = gElCanvas.getContext('2d')
+const elUserEdits = document.querySelector('.user-edits')
 
 function renderMeme() {
     const meme = getMeme()
-    const images = getImages()
-    const img = images.find(image => image.id === meme.selectedImgId)
-    const selectedImg = gElGallery.querySelector(`#img${img.id}`)
+    const selectedImg = gElGallery.querySelector(`#img${meme.selectedImgId}`)
     coverCanvasWithImg(selectedImg) //I guess the selected image is gonna be later changing at the global object gMeme or something. Now i leave it like this.
     addText(meme.lines[0], gElCanvas.width / 2, 40)
     addText(meme.lines[1], gElCanvas.width / 2, gElCanvas.height - 40)
 }
 
 function addText(memeLine, textX, textY) {
-    const meme = getMeme()
     gCtx.font = `${memeLine.size}px Verdana`
     gCtx.fillStyle = `${memeLine.color}`
     gCtx.textAlign = 'center'
@@ -27,8 +25,8 @@ function coverCanvasWithImg(elImg) {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function onChangeText(val) {
-    setLineTxt(val)
+function onChangeText(val, lineNum) {
+    setLineTxt(val, lineNum)
     renderMeme()
 }
 
@@ -40,3 +38,9 @@ function onDownloadClick(elLink) {
 function onChangeTxtColor(val) {
     setTxtColor(val)
 }
+
+function onAddLine() {
+    const elTextInput = elUserEdits.querySelector('input[type="txt"]')
+    elTextInput.oninput = onChangeText(this.value, 1)
+}
+
