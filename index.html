@@ -21,11 +21,16 @@
         <section class="gallery">
 
         </section>
+
         <section class="meme-editor">
             <div class="canvas-container">
                 <canvas width="450" height="450" class="canvas"></canvas>
             </div>
+            <div class="user-edits">
+                <input type="txt" placeholder="Add your text" onchange="onChangeText(this.value)">
+            </div>
         </section>
+
         <section class="about">
 
         </section>
@@ -37,6 +42,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/services/meme-service.js"></script>
     <script src="js/meme-controller.js"></script>
 </body>
 </html>
