@@ -2,10 +2,6 @@
 
 function onInit() {
     renderGallery()
-    const images = document.querySelectorAll('img')
-    images.forEach(img => {
-        addImgListeners(img)
-    })
 }
 
 function addImgListeners(img) {
