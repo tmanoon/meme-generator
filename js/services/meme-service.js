@@ -4,7 +4,7 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel', size: 20,
+            txt: 'I sometimes eat Falafel', size: 30,
             color: 'red'
         }]
 }
@@ -18,7 +18,7 @@ function getImages() {
 }
 
 function setLineTxt(userTxt) {
-    gMeme.lines.txt = userTxt
+    gMeme.lines[0].txt = userTxt
 }
 
 function setImg(elImg) {
