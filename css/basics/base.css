@@ -5,3 +5,8 @@ li {
 a {
     text-decoration: none;
 }
+
+.btn {
+    background-color: transparent;
+    border: none;
+}

@@ -13,15 +13,9 @@ button, .user-edits > input[type="color"] {
     
 }
 
-.user-edits > .increase-font-btn,
-.user-edits > .decrease-font-btn {
-    background-color: transparent;
-    border: none;
-}
-
 .user-edits > .increase-font-btn::before {
     font-family: fa;
-    content:"\f034";
+    content:"\f068";
 }
 
 .user-edits > .increase-font-btn:hover::before {
@@ -37,3 +31,7 @@ button, .user-edits > input[type="color"] {
     color: rgba(171, 0, 0, 0.87);
 }
 
+.user-edits > .add-line-btn::before {
+    content: "\2b";
+    font-family: fa;
+}

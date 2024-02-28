@@ -9,16 +9,17 @@ function renderMeme() {
     const img = images.find(image => image.id === meme.selectedImgId)
     const selectedImg = gElGallery.querySelector(`#img${img.id}`)
     coverCanvasWithImg(selectedImg) //I guess the selected image is gonna be later changing at the global object gMeme or something. Now i leave it like this.
-    addText(meme.lines[0].txt, gElCanvas.width / 2, 40)
+    addText(meme.lines[0], gElCanvas.width / 2, 40)
+    addText(meme.lines[1], gElCanvas.width / 2, gElCanvas.height - 40)
 }
 
-function addText(text, textX, textY) {
+function addText(memeLine, textX, textY) {
     const meme = getMeme()
-    gCtx.font = `${meme.lines[0].size}px Verdana`
-    gCtx.fillStyle = `${meme.lines[0].color}`
+    gCtx.font = `${memeLine.size}px Verdana`
+    gCtx.fillStyle = `${memeLine.color}`
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
-    gCtx.fillText(text, textX, textY)
+    gCtx.fillText(memeLine.txt, textX, textY)
 }
 
 function coverCanvasWithImg(elImg) {
