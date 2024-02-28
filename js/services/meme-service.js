@@ -31,5 +31,6 @@ function setImg(elImg) {
 }
 
 function setTxtColor(val) {
-    gMeme.lines.forEach(line => line.color = val)
+    if(elTextInput.classList.contains('line1')) gMeme.lines[1].color = val
+    else gMeme.lines[0].color = val
 }

@@ -3,6 +3,7 @@
 var gElCanvas = document.querySelector('.canvas')
 var gCtx = gElCanvas.getContext('2d')
 const elUserEdits = document.querySelector('.user-edits')
+const elTextInput = elUserEdits.querySelector('#text-input')
 
 function renderMeme() {
     const meme = getMeme()
@@ -40,10 +41,24 @@ function onChangeTxtColor(val) {
 }
 
 function onAddLine() {
-    const elTextInput = elUserEdits.querySelector('#text-input')
-    elTextInput.oninput = function() {
+    elTextInput.classList.add('line1')
+    elTextInput.oninput = function () {
         onChangeText(this.value, 1)
     }
+}
+
+function onSwitchLine() {
+    if(!getMeme().lines[1].txt) return
+    if (elTextInput.classList.contains('line1')) {
+        elTextInput.oninput = function () {
+            onChangeText(this.value, 0)
+        }
+    } else {
+        elTextInput.oninput = function () {
+            onChangeText(this.value, 1)
+        }
+    }
+    elTextInput.classList.toggle('line1')
 }
 
 
