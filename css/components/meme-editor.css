@@ -15,7 +15,7 @@ button, .user-edits > input[type="color"] {
 
 .user-edits > .increase-font-btn::before {
     font-family: fa;
-    content:"\f068";
+    content:"\f034";
 }
 
 .user-edits > .increase-font-btn:hover::before {

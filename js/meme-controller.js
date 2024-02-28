@@ -8,17 +8,9 @@ const elTextInput = elUserEdits.querySelector('#text-input')
 function renderMeme() {
     const meme = getMeme()
     const selectedImg = gElGallery.querySelector(`#img${meme.selectedImgId}`)
-    coverCanvasWithImg(selectedImg) //I guess the selected image is gonna be later changing at the global object gMeme or something. Now i leave it like this.
-    addText(meme.lines[0], gElCanvas.width / 2, 40)
-    addText(meme.lines[1], gElCanvas.width / 2, gElCanvas.height - 40)
-}
-
-function addText(memeLine, textX, textY) {
-    gCtx.font = `${memeLine.size}px Verdana`
-    gCtx.fillStyle = `${memeLine.color}`
-    gCtx.textAlign = 'center'
-    gCtx.textBaseline = 'middle'
-    gCtx.fillText(memeLine.txt, textX, textY)
+    coverCanvasWithImg(selectedImg)
+    if (meme.lines[0].txt) addText(meme.lines[0])
+    if (meme.lines[1].txt) addText(meme.lines[1])
 }
 
 function coverCanvasWithImg(elImg) {
@@ -26,8 +18,8 @@ function coverCanvasWithImg(elImg) {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function onChangeText(val, lineNum) {
-    setLineTxt(val, lineNum)
+function onChangeText(val, line) {
+    setLineTxt(val, line)
     renderMeme()
 }
 
@@ -36,29 +28,41 @@ function onDownloadClick(elLink) {
     elLink.href = imgContent
 }
 
-function onChangeTxtColor(val) {
+function onChangeTxtColor(val, ev) {
+    ev.stopPropagation()
     setTxtColor(val)
+    renderMeme()
 }
 
-function onAddLine() {
+function onAddLine(ev) {
+    ev.stopPropagation()
     elTextInput.classList.add('line1')
     elTextInput.oninput = function () {
         onChangeText(this.value, 1)
     }
 }
 
-function onSwitchLine() {
-    if(!getMeme().lines[1].txt) return
-    if (elTextInput.classList.contains('line1')) {
-        elTextInput.oninput = function () {
-            onChangeText(this.value, 0)
-        }
-    } else {
-        elTextInput.oninput = function () {
-            onChangeText(this.value, 1)
-        }
-    }
+function onSwitchLine(ev) {
+    ev.stopPropagation()
+    if (!getMeme().lines[1].txt) return
     elTextInput.classList.toggle('line1')
+    elTextInput.oninput = function () {
+        const idxOfLine = elTextInput.classList.contains('line1') ? 1 : 0
+        onChangeText(this.value, idxOfLine)
+    }
+    renderMeme()
 }
 
+function onIncreaseBtn(ev) {
+    ev.stopPropagation()
+    if(elTextInput.classList.contains('line1'))
+    setSize(5, 1)
+    else setSize(5, 0)
+}
 
+function onDecreaseBtn(ev) {
+    ev.stopPropagation()
+    if(elTextInput.classList.contains('line1'))
+    setSize(-5, 1)
+    else setSize(-5, 0)
+}

@@ -30,11 +30,11 @@
             <div class="user-edits">
                 <input type="text" id="text-input" placeholder="Add your text" oninput="onChangeText(this.value, 0)">
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
-                <input type="color" value="#000000" onchange="onChangeTxtColor(this.value)">
-                <button class="btn increase-font-btn"></button>
-                <button class="btn decrease-font-btn"></button>
-                <button class="btn add-line-btn" onclick="onAddLine()"></button>
-                <button class="btn switch-line-btn" onclick="onSwitchLine()"></button>
+                <input type="color" value="#ffffff" oninput="onChangeTxtColor(this.value, event)">
+                <button class="btn increase-font-btn" onclick="onIncreaseBtn(event)"></button>
+                <button class="btn decrease-font-btn" onclick="onDecreaseBtn(event)"></button>
+                <button class="btn add-line-btn" onclick="onAddLine(event)"></button>
+                <button class="btn switch-line-btn" onclick="onSwitchLine(event)"></button>
             </div>
         </section>
 
