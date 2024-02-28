@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Meme Generator</title>
 </head>
+
 <body onload="onInit()">
     <header>
-        <nav class="navigation-bar">
+        <nav class="navigation-bar align-center">
+            <div class=logo>LOGO</div>
             <ul class="list sections-list">
-                <li><div class=logo>LOGO</div></li>
-                <li><button type="button">Gallery</button></li>
+                <li><a href="#" onclick="renderGallery()">Gallery</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
@@ -27,6 +29,7 @@
             </div>
             <div class="user-edits">
                 <input type="txt" placeholder="Add your text" oninput="onChangeText(this.value)">
+                <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
             </div>
         </section>
 
@@ -45,4 +48,5 @@
     <script src="js/gallery-controller.js"></script>
     <script src="js/meme-controller.js"></script>
 </body>
+
 </html>

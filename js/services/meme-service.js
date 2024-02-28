@@ -22,7 +22,7 @@ function setLineTxt(userTxt) {
 }
 
 function setImg(elImg) {
-    elImgNumId = elImg.id.substring(3)
+    const elImgNumId = elImg.id.substring(3)
     const currSelectedImg = gImgs.find(img => img.url.includes(elImgNumId))
     gMeme.selectedImgId = currSelectedImg.id
 }

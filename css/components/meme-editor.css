@@ -1,0 +1,4 @@
+.user-edits > .download-btn::before {
+    content: "\f56d";
+    font-family: fa;
+}
