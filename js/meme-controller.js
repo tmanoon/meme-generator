@@ -40,7 +40,10 @@ function onChangeTxtColor(val) {
 }
 
 function onAddLine() {
-    const elTextInput = elUserEdits.querySelector('input[type="txt"]')
-    elTextInput.oninput = onChangeText(this.value, 1)
+    const elTextInput = elUserEdits.querySelector('#text-input')
+    elTextInput.oninput = function() {
+        onChangeText(this.value, 1)
+    }
 }
+
 
