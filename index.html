@@ -21,12 +21,12 @@
         <section class="gallery">
         </section>
 
-        <section class="meme-editor">
+        <section class="meme-editor" hidden>
             <div class="canvas-container">
                 <canvas width="450" height="450" class="canvas"></canvas>
             </div>
             <div class="user-edits">
-                <input type="txt" placeholder="Add your text" onchange="onChangeText(this.value)">
+                <input type="txt" placeholder="Add your text" oninput="onChangeText(this.value)">
             </div>
         </section>
 
