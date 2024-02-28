@@ -1,11 +1,15 @@
-var gImgs = [{id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat']}, {id: 2, url: '../../img/2.jpg', keywords: ['cute', 'animals']}]
+var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }, { id: 2, url: '../../img/2.jpg', keywords: ['cute', 'animals'] }]
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel', size: 30,
-            color: 'red'
+            txt: 'Type your text', size: 30,
+            color: 'black'
+        },
+        {
+            txt: 'Another line', size: 30,
+            color: 'black'
         }]
 }
 
@@ -27,3 +31,6 @@ function setImg(elImg) {
     gMeme.selectedImgId = currSelectedImg.id
 }
 
+function setTxtColor(val) {
+    gMeme.lines.forEach(line => line.color = val)
+}

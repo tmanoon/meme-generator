@@ -2,3 +2,38 @@
     content: "\f56d";
     font-family: fa;
 }
+
+button, .user-edits > input[type="color"] {
+    cursor: pointer;
+}
+
+
+/* edit later and try to add icon */ 
+.user-edits > input[type="color"] {
+    
+}
+
+.user-edits > .increase-font-btn,
+.user-edits > .decrease-font-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.user-edits > .increase-font-btn::before {
+    font-family: fa;
+    content:"\f034";
+}
+
+.user-edits > .increase-font-btn:hover::before {
+    color: rgba(70, 229, 70, 0.85);
+}
+
+.user-edits > .decrease-font-btn::before {
+    font-family: fa;
+    content:"\f034";
+}
+
+.user-edits > .decrease-font-btn:hover::before {
+    color: rgba(171, 0, 0, 0.87);
+}
+

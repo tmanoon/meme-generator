@@ -15,16 +15,7 @@ function renderGallery() {
 function onSelectImg(elImg) {
     const elSecMemeEditor = document.querySelector('.meme-editor')
     elSecMemeEditor.hidden = false
-    window.addEventListener('resize', () => {
-        resizeCanvas()
-    })
     setImg(elImg)
     gElGallery.hidden = true
     renderMeme()
-}
-
-function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
 }

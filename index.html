@@ -30,6 +30,9 @@
             <div class="user-edits">
                 <input type="txt" placeholder="Add your text" oninput="onChangeText(this.value)">
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
+                <input type="color" value="#000000" onchange="onChangeTxtColor(this.value)">
+                <button class="btn increase-font-btn"></button>
+                <button class="btn decrease-font-btn"></button>
             </div>
         </section>
 
@@ -40,7 +43,7 @@
 
     <footer>
         <div class="logo">LOGO</div>
-        <small>© All rights reserved 2023</small>
+        <small>© All rights reserved to Shoval S, 2023</small>
     </footer>
 
     <script src="js/main.js"></script>
