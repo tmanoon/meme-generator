@@ -14,3 +14,7 @@
 .self-center {
     justify-self: center;
 }
+
+.align-end {
+    align-self: end;
+}

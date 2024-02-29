@@ -1,7 +1,7 @@
 .navigation-bar {
     display: grid;
     grid-template-columns: 80px 1fr 1fr 80px;   
-    padding-block-end: 30px; 
+    padding-block: 30px; 
 }
 
 .logo-container {
@@ -35,4 +35,12 @@
 
 .sections-list > li {
     display: grid;
+}
+
+footer {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 138px;
+    justify-content: center;
 }
