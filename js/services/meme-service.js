@@ -68,8 +68,8 @@ function removeBorder() {
     elBorder.style.opacity = 0
 }
 
-function setSize(size, lineNum) {
-    gMeme.lines[lineNum].size += size
+function setSize(size) {
+    gMeme.lines[gMeme.selectedLineIdx].size += size
 }
 
 function setLineIdx(numOfIdx) {

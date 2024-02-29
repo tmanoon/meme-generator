@@ -51,5 +51,5 @@ function onSwitchLine(ev) {
 
 function onSizeBtn(ev, isPositive) {
     ev.stopPropagation()
-        setSize(5 * isPositive, 1)
+        setSize(5 * isPositive)
 }
