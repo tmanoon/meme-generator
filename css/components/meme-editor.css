@@ -1,49 +1,47 @@
-
 .canvas-container {
     position: relative;
     width: 70dvw;
 }
 
-.user-edits > .download-btn::before {
+.user-edits>.download-btn::before {
     content: "\f56d";
     font-family: fa;
 }
 
-button, .user-edits > input[type="color"] {
+.user-edits>input[type="color"],
+.canvas-container>.canvas {
     cursor: pointer;
 }
 
 
-/* edit later and try to add icon */ 
-.user-edits > input[type="color"] {
-    
-}
+/* edit later and try to add icon */
+.user-edits>input[type="color"] {}
 
-.user-edits > .increase-font-btn::before {
+.user-edits>.increase-font-btn::before {
     font-family: fa;
-    content:"\f034";
+    content: "\f034";
 }
 
-.user-edits > .increase-font-btn:hover::before {
+.user-edits>.increase-font-btn:hover::before {
     color: rgba(70, 229, 70, 0.85);
 }
 
-.user-edits > .decrease-font-btn::before {
+.user-edits>.decrease-font-btn::before {
     font-family: fa;
-    content:"\f034";
+    content: "\f034";
 }
 
-.user-edits > .decrease-font-btn:hover::before {
+.user-edits>.decrease-font-btn:hover::before {
     color: rgba(171, 0, 0, 0.87);
 }
 
-.user-edits > .add-line-btn::before {
+.user-edits>.add-line-btn::before {
     content: "\2b";
     font-family: fa;
 }
 
-.user-edits > .switch-line-btn::before {
-    content:"\f363";
+.user-edits>.switch-line-btn::before {
+    content: "\f363";
     font-family: fa;
 }
 
@@ -52,7 +50,7 @@ button, .user-edits > input[type="color"] {
     top: 0;
     width: 350px;
     height: 0;
-    background-color: #ffffff4e;;
+    background-color: #ffffff4e;
     margin-inline: 50px;
     box-shadow: 1px 1px 11px 6px rgb(80 80 80 / 52%);
     padding: 5px;

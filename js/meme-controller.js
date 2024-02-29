@@ -55,3 +55,9 @@ function onSizeBtn(ev, isPositive) {
     setSize(5 * isPositive)
     renderMeme()
 }
+
+function onCanvasClick(ev) {
+    ev.stopPropagation()
+    checkForLine(ev)
+    renderMeme()
+}

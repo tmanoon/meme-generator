@@ -78,8 +78,19 @@ function addLocations() {
         line.location = {
             x: gElCanvas.width / 9,
             y: (gElCanvas.width / 9 - lines[idx].size) + ((gElCanvas.width / 9) * idx),
-            xEnd: gCtx.measureText(lines[idx].txt).width >= 400 ? 400 : gCtx.measureText(lines[idx].txt).width, 
+            xEnd: gCtx.measureText(lines[idx].txt).width >= 400 ? 400 : gCtx.measureText(lines[idx].txt).width,
             yEnd: (gElCanvas.width / 9) * (idx + 1)
         }
     })
 }
+
+function checkForLine(ev) {
+    const clickedX = ev.offsetX
+    const clickedY = ev.offsetY
+    const lines = gMeme.lines
+    if (clickedX > 400 || clickedX < 50) return
+    const idxOfSelectedLine = lines.findIndex(line => line.location.y <= clickedY && line.location.yEnd >= clickedY)
+    if(idxOfSelectedLine === -1) return
+    gMeme.selectedLineIdx = idxOfSelectedLine
+}
+
