@@ -1,5 +1,5 @@
 
-.logo>h1,
+.logo-container>h1,
 .sections-list>li>a {
     font-family: luckiestguy;
 }
@@ -8,9 +8,10 @@
     margin-block-end: 19px;
 }
 
-.logo>h1 {
+.logo-container>h1 {
     font-size: 1.8em;
     margin: 0;
+    align-self: end;
 }
 
 
@@ -34,11 +35,7 @@
 }
 
 .logo-img {
-    width: auto;
+    display: block;
+    max-width: 100%;
     height: 4.875rem;
-    margin-block-end: 19px;
-}
-
-.manoon {
-    height: 6rem
 }

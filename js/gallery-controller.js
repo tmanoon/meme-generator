@@ -1,6 +1,8 @@
 'use strict'
+
 var gImgs = []
 const gElGallery = document.querySelector('.gallery')
+const elSecMemeEditor = document.querySelector('.meme-editor')
 
 function renderGallery() {
     _createImages()
@@ -8,35 +10,17 @@ function renderGallery() {
     strHTML = gImgs.map(img => {
         return `<img src="${img.url}" id="img${img.id}">`
     }).join('')
-    gElGallery.innerHTML = strHTML
-    if (gElGallery.hidden) gElGallery.hidden = false
-    const elSecMemeEditor = document.querySelector('.meme-editor')
-    if (!elSecMemeEditor.hidden) elSecMemeEditor.hidden = true
-
+    gElGallery.innerHTML = strHTML    
     addImgListeners()
-}
-
-function _createImages() {
-    gImgs = []
-    for (let i = 1; i <= 18; i++) {
-        gImgs.push(_createImage(i, `img/${i}.jpg`, []))
-    }
-}
-
-function _createImage(id, url, keywords) {
-    return {
-        id,
-        url,
-        keywords
-    }
+    if (gElGallery.style.display === 'none') gElGallery.style.display = 'grid'
+    if (elSecMemeEditor.style.display != 'none') elSecMemeEditor.style.display = 'none'
 }
 
 function onSelectImg(ev) {
     ev.stopPropagation()
-    const elSecMemeEditor = document.querySelector('.meme-editor')
-    elSecMemeEditor.hidden = false
+    if (gElGallery.style.display != 'none') gElGallery.style.display = 'none'
+    elSecMemeEditor.style.display = 'grid'
     setImg(ev.target)
-    gElGallery.hidden = true
     setBorderSize()
     renderMeme()
 }
@@ -63,3 +47,17 @@ function addImgTouchListeners(img) {
     // gElCanvas.addEventListener('touchend', onUp)
 }
 
+function _createImages() {
+    gImgs = []
+    for (let i = 1; i <= 18; i++) {
+        gImgs.push(_createImage(i, `img/${i}.jpg`, []))
+    }
+}
+
+function _createImage(id, url, keywords) {
+    return {
+        id,
+        url,
+        keywords
+    }
+}

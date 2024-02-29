@@ -1,6 +1,5 @@
 'use strict'
 const elBorder = document.querySelector('.border-of-text')
-var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }, { id: 2, url: '../../img/2.jpg', keywords: ['cute', 'animals'] }]
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
@@ -21,7 +20,7 @@ function setLineTxt(userTxt) {
 }
 
 function setImg(elImg) {
-    const elImgNumId = elImg.id.slice(-1)
+    const elImgNumId = elImg.id.substring(3)
     gMeme.selectedImgId = +elImgNumId
 }
 
@@ -31,13 +30,12 @@ function setTxtColor(val) {
 
 function setText() {
     gMeme.lines.forEach((line, idx) => {
-        const lines = gMeme.lines
-        gCtx.font = `${(lines[idx].size)}px Verdana`
+        gCtx.font = `${(line.size)}px Verdana`
         gCtx.beginPath()
         // I chose this proportion, 1/9 from each side out of the canvas' width.
-        gCtx.fillStyle = lines[idx].color
+        gCtx.fillStyle = line.color
         gCtx.textBaseline = "bottom";
-        gCtx.fillText(lines[idx].txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2))
+        gCtx.fillText(line.txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2))
         gCtx.closePath()
     })
 }

@@ -11,20 +11,20 @@
 <body onload="onInit()">
     <header>
         <nav class="navigation-bar align-center">
-            <div class=logo>
-                <img src="img/logo/manoon.png" class="logo-img manoon">
-                <img src="img/logo/kashoosh.jpg" class="logo-img">
-                <h1>Meme-me.</h1>
+            <div class="logo-container">
+                <img src="img/logo/manoon.png" class="logo-img self-center">
+                <img src="img/logo/kashoosh.jpg" class="logo-img self-center">
+                <h1 class="self-center">Meme-me.</h1>
             </div>
             <ul class="list sections-list">
-                <li><a href="#" onclick="onInit()" class="align-center">Gallery</a></li>
-                <li><a href="#" class="align-center">About</a></li>
+                <li><a href="#" onclick="renderGallery()" class="align-center self-center">Gallery</a></li>
+                <li><a href="#" class="align-center self-center">About</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="gallery">
+        <section class="gallery justify-center">
         </section>
 
         <section class="meme-editor" hidden>

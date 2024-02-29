@@ -1,25 +1,38 @@
 .navigation-bar {
     display: grid;
-    grid-auto-flow: column;    
-    margin-inline: 80px;
+    grid-template-columns: 80px 1fr 1fr 80px;   
+    padding-block-end: 30px; 
 }
 
-.logo {
+.logo-container {
+    grid-column: 2;
     display: grid;
-    grid-template-rows: 30dvh;
     gap: 6px;
-    grid-template-columns: 6.875em 6.875em 1fr;
-    align-items: end;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* align-items: end; */
 }
 
 .sections-list {
+    grid-column: 3;
     display: grid;
-    grid-template-columns: 5em 5em;
+    grid-template-columns: 1fr 1fr;
     gap: .5em;
     align-items: end;
 }
 
 .gallery {
-
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    gap: .5rem;
+    margin-inline: 80px;
+    /* width: 100vw; */
 }
 
+.meme-editor {
+    display: none;
+}
+
+.sections-list > li {
+    display: grid;
+}
