@@ -9,7 +9,8 @@ function renderMeme() {
     const meme = getMeme()
     const selectedImg = gElGallery.querySelector(`#img${meme.selectedImgId}`)
     coverCanvasWithImg(selectedImg)
-    meme.lines.forEach((line, idx) => setText(line, idx))
+    setText()
+    addLocations()
 }
 
 function coverCanvasWithImg(elImg) {
