@@ -7,6 +7,17 @@
     display: grid;
     grid-template-rows: 30dvh;
     gap: 14px;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 6.875em 6.875em 9em;
     align-items: end;
+    margin-block-end: 20px;
+}
+
+.sections-list {
+    display: grid;
+    grid-template-columns: 5em 5em;
+    gap: .5em;
+}
+
+.sections-list > li {
+    align-self: center;
 }
