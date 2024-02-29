@@ -1,18 +1,21 @@
-.logo-img {
-    width: 100px;
+
+.logo>h1,
+.sections-list>li>a {
+    font-family: luckiestguy;
 }
 
-.logo > h1, .sections-list > li > a {
-        font-family: luckiestguy;
+.sections-list > li {
+    margin-block-end: 19px;
 }
 
-.logo > h1 {
-
-    font-size: 1.5em;
+.logo>h1 {
+    font-size: 1.8em;
+    margin: 0;
 }
 
-.logo > h1::first-letter {
-    font-size: 2em;
+
+.logo>h1::first-letter {
+    font-size: 2.3em;
 }
 
 .sections-list {
@@ -21,11 +24,21 @@
     height: 100%;
 }
 
-.sections-list > li > a {
+.sections-list>li>a {
     color: #ffffff;
-    text-shadow: 2px 0 #000, -2px 0 #161515, 0 0px #000, -2px 2px #000, -2px -2px #000, 1px -2px #000, -1px 2px #000, 0 -2px #000
+    text-shadow: 2px 0 #000, -2px 0 #161515, 0 0px #000, -2px 2px #000, -2px -2px #000, 1px -2px #000, -1px 2px #000, 0 -2px #000;
 }
 
-.sections-list > li > a:hover {
+.sections-list>li>a:hover {
     text-shadow: 2px 0 #3ead66, -2px 0 #d73535, 0 0px #482ee3, -2px 2px #e848d3, -2px -2px #48e5d7, 1px -2px #fff32d, -1px 2px #c07aff, 0 -2px #ffd273;
+}
+
+.logo-img {
+    width: auto;
+    height: 4.875rem;
+    margin-block-end: 19px;
+}
+
+.manoon {
+    height: 6rem
 }

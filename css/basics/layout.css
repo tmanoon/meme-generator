@@ -1,23 +1,25 @@
 .navigation-bar {
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: column;    
+    margin-inline: 80px;
 }
 
 .logo {
     display: grid;
     grid-template-rows: 30dvh;
-    gap: 14px;
-    grid-template-columns: 6.875em 6.875em 9em;
+    gap: 6px;
+    grid-template-columns: 6.875em 6.875em 1fr;
     align-items: end;
-    margin-block-end: 20px;
 }
 
 .sections-list {
     display: grid;
     grid-template-columns: 5em 5em;
     gap: .5em;
+    align-items: end;
 }
 
-.sections-list > li {
-    align-self: center;
+.gallery {
+
 }
+
