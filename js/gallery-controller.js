@@ -1,16 +1,34 @@
 'use strict'
-
+var gImgs = []
 const gElGallery = document.querySelector('.gallery')
 
 function renderGallery() {
+    _createImages()
+    var strHTML = ''
+    strHTML = gImgs.map(img => {
+        return `<img src="${img.url}" id="img${img.id}">`
+    }).join('')
+    gElGallery.innerHTML = strHTML
     if (gElGallery.hidden) gElGallery.hidden = false
     const elSecMemeEditor = document.querySelector('.meme-editor')
     if (!elSecMemeEditor.hidden) elSecMemeEditor.hidden = true
-    var strHTML = ''
-    strHTML += `<img src="img/1.jpg" id="img1"">
-     <img src="img/2.jpg" id="img2">`
-    gElGallery.innerHTML = strHTML
+
     addImgListeners()
+}
+
+function _createImages() {
+    gImgs = []
+    for (let i = 1; i <= 18; i++) {
+        gImgs.push(_createImage(i, `img/${i}.jpg`, []))
+    }
+}
+
+function _createImage(id, url, keywords) {
+    return {
+        id,
+        url,
+        keywords
+    }
 }
 
 function onSelectImg(ev) {
