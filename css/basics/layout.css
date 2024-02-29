@@ -1,23 +1,24 @@
 .navigation-bar {
     display: grid;
-    grid-template-columns: 80px 1fr 1fr 80px;   
+    grid-template-rows: 1fr 1fr 1fr;   
     padding-block: 30px; 
 }
 
 .logo-container {
-    grid-column: 2;
-    display: grid;
-    gap: 6px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
     /* align-items: end; */
 }
 
 .sections-list {
-    grid-column: 3;
+    grid-row: 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .5em;
     align-items: end;
+    width: 100%;
 }
 
 .gallery {

@@ -43,6 +43,8 @@ function setText() {
 function addHighlight(memeLine, idx) {
     const top = gElCanvas.width / 9 - memeLine.size + ((gElCanvas.width / 9) * idx)
     elBorder.style.top = top + 'px'
+    elBorder.style.width = gElCanvas.width - ( 2* (gElCanvas.width / 9)) + 'px'
+    elBorder.style.marginInline = gElCanvas.width / 9 + 'px'
     elBorder.style.height = memeLine.size + 'px'
     elBorder.style.opacity = 1
 }

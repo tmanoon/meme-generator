@@ -15,6 +15,7 @@ function renderMeme() {
 
 function coverCanvasWithImg(elImg) {
     gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
+    gElCanvas.width = elSecMemeEditor.offsetWidth
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 

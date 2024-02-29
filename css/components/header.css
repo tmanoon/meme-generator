@@ -1,5 +1,5 @@
 
-.logo-container>h1,
+.navigation-bar>h1,
 .sections-list>li>a {
     font-family: luckiestguy;
 }
@@ -8,7 +8,7 @@
     margin-block-end: 19px;
 }
 
-.logo-container>h1 {
+.navigation-bar>h1 {
     font-size: 1.8em;
     margin: 0;
     align-self: end;
@@ -27,6 +27,7 @@
 
 .sections-list>li>a {
     color: #ffffff;
+    font-size: 1.3em;
     text-shadow: 2px 0 #000, -2px 0 #161515, 0 0px #000, -2px 2px #000, -2px -2px #000, 1px -2px #000, -1px 2px #000, 0 -2px #000;
 }
 

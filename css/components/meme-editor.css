@@ -1,6 +1,10 @@
+.meme-editor {
+    width: 100dvw;
+}
+
 .canvas-container {
     position: relative;
-    width: 70dvw;
+    width: inherit;
 }
 
 .user-edits>.download-btn::before {
@@ -48,10 +52,9 @@
 .border-of-text {
     position: absolute;
     top: 0;
-    width: 350px;
+    width: 0;
     height: 0;
     background-color: #ffffff4e;
-    margin-inline: 50px;
     box-shadow: 1px 1px 11px 6px rgb(80 80 80 / 52%);
     padding: 5px;
     border-radius: 8px;

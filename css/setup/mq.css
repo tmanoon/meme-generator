@@ -1,0 +1,30 @@
+@media (width < 740px) {
+    .navigation-bar > h1 {
+        align-self: center
+    }
+    .gallery {
+        grid-template-columns: repeat(4, 70px);
+    }
+
+    .navigation-bar {
+        padding-block: 5px;
+        grid-template-rows: 60px 1fr 60px;
+    }
+
+    footer {
+        height: 70px;
+    }
+}
+
+@media (width > 740px) {
+    footer {
+        height: 100px;
+    }
+    .navigation-bar > h1 {
+        align-self: center
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 110px);
+    }
+}
