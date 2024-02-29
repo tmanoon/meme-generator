@@ -4,7 +4,7 @@ var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }, { id: 2, u
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
-    lines: [{txt: 'Type your text', size: 30, color: 'white'}]
+    lines: [{ txt: 'Type your text', size: 30, color: 'white' }]
 }
 
 function getMeme() {
@@ -27,16 +27,18 @@ function setImg(elImg) {
 }
 
 function setTxtColor(val) {
-   gMeme.lines[selectedLineIdx].color = val
+    gMeme.lines[gMeme.selectedLineIdx].color = val
 }
 
-function setText(memeLine, idx) {
-    gCtx.font = `${(memeLine.size)}px Verdana`
-    gCtx.beginPath()
-    gCtx.fillStyle = memeLine.color
-    gCtx.fillText(memeLine.txt, 50, 50 + (idx * 50), 350)
-    gCtx.closePath()
-
+function setText() {
+    gMeme.lines.forEach((line, idx) => {
+        const lines = gMeme.lines
+        gCtx.font = `${(lines[idx].size)}px Verdana`
+        gCtx.beginPath()
+        gCtx.fillStyle = lines[idx].color
+        gCtx.fillText(lines[idx].txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2)) // I chose this proportion, 1/9 from each side out of the canvas' width.
+        gCtx.closePath()
+    })
 }
 
 function addHighlight(memeLine, idx) {
@@ -59,11 +61,18 @@ function setSize(size) {
 }
 
 function setLineIdx(numOfIdx) {
-    if(!numOfIdx) gMeme.selectedLineIdx = numOfIdx
+    if (!numOfIdx) gMeme.selectedLineIdx = numOfIdx
     gMeme.selectedLineIdx += numOfIdx
 }
 
 function addLine() {
-    gMeme.lines.push({txt: '', size: 30, color: 'white'})
+    gMeme.lines.push({ txt: '', size: 30, color: 'white' })
     gMeme.selectedLineIdx = gMeme.lines.length - 1
+}
+
+function addLocations() {
+    gMeme.lines.forEach((line, idx) => {
+        const lines = gMeme.lines
+        line.location = { x: 50, y: 50 - lines[idx].size + (50 * idx), xEnd: (lines[idx].size / 1.5) * lines[idx].txt.length, yEnd: 50 + (50 * idx)} // (lines[idx].size / 1.5) is the width with a bit of padding of each letter.
+    })
 }

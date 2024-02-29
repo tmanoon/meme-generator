@@ -52,10 +52,10 @@ button, .user-edits > input[type="color"] {
     top: 0;
     width: 350px;
     height: 0;
-    background-color: #ffffff59;;
+    background-color: #ffffff4e;;
     margin-inline: 50px;
     box-shadow: 1px 1px 11px 6px rgb(80 80 80 / 52%);
-    padding: 3px;
+    padding: 5px;
     border-radius: 8px;
     opacity: 0;
 }
