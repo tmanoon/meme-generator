@@ -26,9 +26,10 @@
         <section class="meme-editor" hidden>
             <div class="canvas-container">
                 <canvas width="450" height="450" class="canvas"></canvas>
+                <div class="border-of-text"></div>
             </div>
             <div class="user-edits">
-                <input type="text" id="text-input" placeholder="Add your text" oninput="onChangeText(this.value, 0)">
+                <input type="text" class="text-input" id="text-input" placeholder="Add your text" oninput="onChangeText(event, this.value)">
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
                 <input type="color" value="#ffffff" oninput="onChangeTxtColor(this.value, event)">
                 <button class="btn increase-font-btn" onclick="onIncreaseBtn(event)"></button>

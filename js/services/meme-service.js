@@ -23,8 +23,9 @@ function getImages() {
     return gImgs
 }
 
-function setLineTxt(userTxt, line) {
-    gMeme.lines[line].txt = userTxt
+function setLineTxt(userTxt) {
+    if (elTextInput.classList.contains('line1')) gMeme.lines[1].txt = userTxt
+    else gMeme.lines[0].txt = userTxt
 }
 
 function setImg(elImg) {
@@ -38,17 +39,19 @@ function setTxtColor(val) {
     else gMeme.lines[0].color = val
 }
 
-function addText(memeLine) {
-    addHighlight(memeLine)
+function setText(memeLine) {
     gCtx.font = `${(memeLine.size)}px Verdana`
-    if (elTextInput.classList.contains('line1')) {
-        gCtx.fillStyle = memeLine.color
-        gCtx.fillText(memeLine.txt, 50, gElCanvas.height - 50 , 350)
-        gCtx.fillStyle = gMeme.lines[0].color
-        gCtx.fillText(gMeme.lines[0].txt, 50, 50, 350)
+    gCtx.beginPath()
+    gCtx.fillStyle = memeLine.color
+    gCtx.beginPath()
+    if (memeLine === gMeme.lines[1]) {
+        gCtx.fillText(memeLine.txt, 50, gElCanvas.height - 50, 350)
+        gCtx.closePath()
     } else {
+        gCtx.beginPath()
         gCtx.fillStyle = memeLine.color
         gCtx.fillText(memeLine.txt, 50, 50, 350)
+        gCtx.closePath()
     }
 }
 

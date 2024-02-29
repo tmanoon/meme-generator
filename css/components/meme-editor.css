@@ -1,3 +1,9 @@
+
+.canvas-container {
+    position: relative;
+    width: 70dvw;
+}
+
 .user-edits > .download-btn::before {
     content: "\f56d";
     font-family: fa;
@@ -39,4 +45,17 @@ button, .user-edits > input[type="color"] {
 .user-edits > .switch-line-btn::before {
     content:"\f363";
     font-family: fa;
+}
+
+.border-of-text {
+    position: absolute;
+    top: 47px;
+    width: 350px;
+    height: 30px;
+    background-color: #ffffff59;;
+    margin-inline: 50px;
+    box-shadow: 1px 1px 11px 6px rgb(80 80 80 / 52%);
+    padding: 3px;
+    border-radius: 8px;
+    display: none;
 }
