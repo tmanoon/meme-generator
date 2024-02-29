@@ -1,6 +1,7 @@
 @media (width < 740px) {
     .navigation-bar > h1 {
-        align-self: center
+        padding-block: 30px;
+        grid-row: 1;
     }
     .gallery {
         grid-template-columns: repeat(4, 70px);
@@ -8,17 +9,22 @@
 
     .navigation-bar {
         padding-block: 5px;
-        grid-template-rows: 60px 1fr 60px;
+        grid-template-rows: 1fr auto 40px;
     }
 
     footer {
-        height: 70px;
+        height: 50px;
     }
+
+    .navigation-bar, main {
+        margin-block-end: 60px;
+    }
+
 }
 
 @media (width > 740px) {
     footer {
-        height: 100px;
+        height: 50px;
     }
     .navigation-bar > h1 {
         align-self: center

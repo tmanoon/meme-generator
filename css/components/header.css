@@ -4,19 +4,14 @@
     font-family: luckiestguy;
 }
 
-.sections-list > li {
-    margin-block-end: 19px;
-}
-
 .navigation-bar>h1 {
-    font-size: 1.8em;
+    font-size: 2.6em;
     margin: 0;
-    align-self: end;
 }
 
 
 .logo>h1::first-letter {
-    font-size: 2.3em;
+    font-size: 2.7em;
 }
 
 .sections-list {
