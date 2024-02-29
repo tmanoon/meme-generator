@@ -29,7 +29,7 @@
                 <div class="border-of-text"></div>
             </div>
             <div class="user-edits">
-                <input type="text" class="text-input" id="text-input" placeholder="Add your text" oninput="onChangeText(event, this.value)">
+                <input type="text" class="text-input" id="text-input" placeholder="Add your text" onkeyup="removeBorder()" oninput="onChangeText(event, this.value)">
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
                 <input type="color" value="#ffffff" oninput="onChangeTxtColor(this.value, event)">
                 <button class="btn increase-font-btn" onclick="onIncreaseBtn(event)"></button>

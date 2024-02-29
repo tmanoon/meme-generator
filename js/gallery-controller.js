@@ -19,6 +19,7 @@ function onSelectImg(ev) {
     elSecMemeEditor.hidden = false
     setImg(ev.target)
     gElGallery.hidden = true
+    setBorderSize()
     renderMeme()
 }
 

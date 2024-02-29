@@ -49,13 +49,13 @@ button, .user-edits > input[type="color"] {
 
 .border-of-text {
     position: absolute;
-    top: 47px;
+    top: 0;
     width: 350px;
-    height: 30px;
+    height: 0;
     background-color: #ffffff59;;
     margin-inline: 50px;
     box-shadow: 1px 1px 11px 6px rgb(80 80 80 / 52%);
     padding: 3px;
     border-radius: 8px;
-    display: none;
+    opacity: 0;
 }

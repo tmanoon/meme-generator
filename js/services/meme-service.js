@@ -1,5 +1,5 @@
 'use strict'
-
+const elBorder = document.querySelector('.border-of-text')
 var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }, { id: 2, url: '../../img/2.jpg', keywords: ['cute', 'animals'] }]
 var gMeme = {
     selectedImgId: 5,
@@ -24,8 +24,13 @@ function getImages() {
 }
 
 function setLineTxt(userTxt) {
-    if (elTextInput.classList.contains('line1')) gMeme.lines[1].txt = userTxt
-    else gMeme.lines[0].txt = userTxt
+    if (elTextInput.classList.contains('line1')) {
+        gMeme.lines[1].txt = userTxt
+        addHighlight(gMeme.lines[1])
+        return
+    }
+    gMeme.lines[0].txt = userTxt
+    addHighlight(gMeme.lines[0])
 }
 
 function setImg(elImg) {
@@ -57,16 +62,20 @@ function setText(memeLine) {
 
 function addHighlight(memeLine) {
     const idxOfLine = gMeme.lines.findIndex(line => line === memeLine)
-    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-    const bgcImg = gElGallery.querySelector(`#img${gMeme.selectedImgId}`)
-    coverCanvasWithImg(bgcImg)
-    const yPos = (idxOfLine === 0) ? 47 - memeLine.size : gElCanvas.height - (50 + memeLine.size)
-    gCtx.globalAlpha = 0.8
-    gCtx.strokeStyle = '#ffffff'
-    gCtx.strokeRect(47, yPos, gElCanvas.width - 95, memeLine.size + 10)
-    gCtx.globalAlpha = 1.0
+    const top = (idxOfLine === 0) ? 50 - memeLine.size : gElCanvas.height - (50 + memeLine.size)
+    elBorder.style.top = top + 'px'
+    elBorder.style.height = memeLine.size + 'px'
+    elBorder.style.opacity = 1
 }
 
-function setSize(size, line) {
-    gMeme.lines[line].size += size
+function setBorderSize() {
+    elBorder.style.width = (gElCanvas.width - 100) + 'px'
+}
+
+function removeBorder() {
+    elBorder.style.opacity = 0
+}
+
+function setSize(size, lineNum) {
+    gMeme.lines[lineNum].size += size
 }
