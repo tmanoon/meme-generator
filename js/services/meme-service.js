@@ -6,11 +6,7 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: '', size: 30,
-            color: 'white'
-        },
-        {
-            txt: '', size: 30,
+            txt: 'tooo', size: 30,
             color: 'white'
         }]
 }
@@ -23,14 +19,19 @@ function getImages() {
     return gImgs
 }
 
+// function setLineTxt(userTxt) {
+//     if (elTextInput.classList.contains('line1')) {
+//         gMeme.lines[1].txt = userTxt
+//         addHighlight(gMeme.lines[1])
+//         return
+//     }
+//     gMeme.lines[0].txt = userTxt
+//     addHighlight(gMeme.lines[0])
+// }
+
 function setLineTxt(userTxt) {
-    if (elTextInput.classList.contains('line1')) {
-        gMeme.lines[1].txt = userTxt
-        addHighlight(gMeme.lines[1])
-        return
-    }
-    gMeme.lines[0].txt = userTxt
-    addHighlight(gMeme.lines[0])
+    gMeme.lines[gMeme.selectedLineIdx].txt = userTxt
+    addHighlight(gMeme.lines[gMeme.selectedLineIdx], gMeme.selectedLineIdx)
 }
 
 function setImg(elImg) {
@@ -40,29 +41,20 @@ function setImg(elImg) {
 }
 
 function setTxtColor(val) {
-    if (elTextInput.classList.contains('line1')) gMeme.lines[1].color = val
-    else gMeme.lines[0].color = val
+   gMeme.lines[selectedLineIdx].color = val
 }
 
-function setText(memeLine) {
+function setText(memeLine, idx) {
     gCtx.font = `${(memeLine.size)}px Verdana`
     gCtx.beginPath()
     gCtx.fillStyle = memeLine.color
-    gCtx.beginPath()
-    if (memeLine === gMeme.lines[1]) {
-        gCtx.fillText(memeLine.txt, 50, gElCanvas.height - 50, 350)
-        gCtx.closePath()
-    } else {
-        gCtx.beginPath()
-        gCtx.fillStyle = memeLine.color
-        gCtx.fillText(memeLine.txt, 50, 50, 350)
-        gCtx.closePath()
-    }
+    gCtx.fillText(memeLine.txt, 50, 50 + (idx * 50), 350)
+    gCtx.closePath()
+
 }
 
-function addHighlight(memeLine) {
-    const idxOfLine = gMeme.lines.findIndex(line => line === memeLine)
-    const top = (idxOfLine === 0) ? 50 - memeLine.size : gElCanvas.height - (50 + memeLine.size)
+function addHighlight(memeLine, idx) {
+    const top = 50 - memeLine.size + (50 * idx)
     elBorder.style.top = top + 'px'
     elBorder.style.height = memeLine.size + 'px'
     elBorder.style.opacity = 1
@@ -78,4 +70,14 @@ function removeBorder() {
 
 function setSize(size, lineNum) {
     gMeme.lines[lineNum].size += size
+}
+
+function setLineIdx(numOfIdx) {
+    if(!numOfIdx) gMeme.selectedLineIdx = numOfIdx
+    gMeme.selectedLineIdx += numOfIdx
+}
+
+function addLine() {
+    gMeme.lines.push({txt: '', size: 30, color: 'white'})
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
 }

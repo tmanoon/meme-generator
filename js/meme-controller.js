@@ -9,8 +9,7 @@ function renderMeme() {
     const meme = getMeme()
     const selectedImg = gElGallery.querySelector(`#img${meme.selectedImgId}`)
     coverCanvasWithImg(selectedImg)
-    if (meme.lines[0].txt) setText(meme.lines[0])
-    if (meme.lines[1].txt) setText(meme.lines[1])
+    meme.lines.forEach((line, idx) => setText(line, idx))
 }
 
 function coverCanvasWithImg(elImg) {
@@ -37,16 +36,16 @@ function onChangeTxtColor(val, ev) {
 
 function onAddLine(ev) {
     ev.stopPropagation()
-    elTextInput.classList.add('line1')
+    addLine()
     renderMeme()
 }
 
 function onSwitchLine(ev) {
     ev.stopPropagation()
     const meme = getMeme()
-    if (!(meme.lines[1].txt)) return
-    if (elTextInput.classList.contains('line1')) elTextInput.classList.remove('line1')
-    else elTextInput.classList.add('line1')
+    if (!meme.lines[1]) return
+    if (meme.selectedLineIdx === meme.lines.length - 1) setLineIdx(0)
+    else setLineIdx(1)
     renderMeme()
 }
 
