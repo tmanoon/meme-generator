@@ -3,3 +3,10 @@
     grid-auto-flow: column;
 }
 
+.logo {
+    display: grid;
+    grid-template-rows: 30dvh;
+    gap: 14px;
+    grid-template-columns: 100px 100px 100px;
+    align-items: end;
+}

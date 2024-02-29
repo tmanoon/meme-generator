@@ -2,3 +2,8 @@
     font-family: fa;
     src: url(../../fonts/fa-solid-900.ttf);
 }
+
+@font-face {
+    font-family: luckiestguy;
+    src: url(../../fonts/LuckiestGuy-Regular.ttf);
+}
