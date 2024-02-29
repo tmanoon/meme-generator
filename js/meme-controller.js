@@ -52,5 +52,6 @@ function onSwitchLine(ev) {
 
 function onSizeBtn(ev, isPositive) {
     ev.stopPropagation()
-        setSize(5 * isPositive)
+    setSize(5 * isPositive)
+    renderMeme()
 }

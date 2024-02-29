@@ -21,7 +21,6 @@ function setLineTxt(userTxt) {
 }
 
 function setImg(elImg) {
-    20
     const elImgNumId = elImg.id.slice(-1)
     gMeme.selectedImgId = +elImgNumId
 }
@@ -35,14 +34,16 @@ function setText() {
         const lines = gMeme.lines
         gCtx.font = `${(lines[idx].size)}px Verdana`
         gCtx.beginPath()
+        // I chose this proportion, 1/9 from each side out of the canvas' width.
         gCtx.fillStyle = lines[idx].color
-        gCtx.fillText(lines[idx].txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2)) // I chose this proportion, 1/9 from each side out of the canvas' width.
+        gCtx.textBaseline = "bottom";
+        gCtx.fillText(lines[idx].txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2))
         gCtx.closePath()
     })
 }
 
 function addHighlight(memeLine, idx) {
-    const top = 50 - memeLine.size + (50 * idx)
+    const top = gElCanvas.width / 9 - memeLine.size + ((gElCanvas.width / 9) * idx)
     elBorder.style.top = top + 'px'
     elBorder.style.height = memeLine.size + 'px'
     elBorder.style.opacity = 1
@@ -57,7 +58,8 @@ function removeBorder() {
 }
 
 function setSize(size) {
-    gMeme.lines[gMeme.selectedLineIdx].size += size
+    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    if (selectedLine.location.y >= 5) selectedLine.size += size
 }
 
 function setLineIdx(numOfIdx) {
@@ -73,6 +75,11 @@ function addLine() {
 function addLocations() {
     gMeme.lines.forEach((line, idx) => {
         const lines = gMeme.lines
-        line.location = { x: 50, y: 50 - lines[idx].size + (50 * idx), xEnd: (lines[idx].size / 1.5) * lines[idx].txt.length, yEnd: 50 + (50 * idx)} // (lines[idx].size / 1.5) is the width with a bit of padding of each letter.
+        line.location = {
+            x: gElCanvas.width / 9,
+            y: (gElCanvas.width / 9 - lines[idx].size) + ((gElCanvas.width / 9) * idx),
+            xEnd: gCtx.measureText(lines[idx].txt).width >= 400 ? 400 : gCtx.measureText(lines[idx].txt).width, 
+            yEnd: (gElCanvas.width / 9) * (idx + 1)
+        }
     })
 }
