@@ -49,16 +49,7 @@ function onSwitchLine(ev) {
     renderMeme()
 }
 
-function onIncreaseBtn(ev) {
+function onSizeBtn(ev, isPositive) {
     ev.stopPropagation()
-    if (elTextInput.classList.contains('line1'))
-        setSize(5, 1)
-    else setSize(5, 0)
-}
-
-function onDecreaseBtn(ev) {
-    ev.stopPropagation()
-    if (elTextInput.classList.contains('line1'))
-        setSize(-5, 1)
-    else setSize(-5, 0)
+        setSize(5 * isPositive, 1)
 }
