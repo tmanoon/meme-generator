@@ -4,11 +4,7 @@ var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }, { id: 2, u
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
-    lines: [
-        {
-            txt: 'tooo', size: 30,
-            color: 'white'
-        }]
+    lines: [{txt: 'Type your text', size: 30, color: 'white'}]
 }
 
 function getMeme() {
@@ -18,16 +14,6 @@ function getMeme() {
 function getImages() {
     return gImgs
 }
-
-// function setLineTxt(userTxt) {
-//     if (elTextInput.classList.contains('line1')) {
-//         gMeme.lines[1].txt = userTxt
-//         addHighlight(gMeme.lines[1])
-//         return
-//     }
-//     gMeme.lines[0].txt = userTxt
-//     addHighlight(gMeme.lines[0])
-// }
 
 function setLineTxt(userTxt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = userTxt
