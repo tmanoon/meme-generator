@@ -59,7 +59,7 @@ function onSizeBtn(ev, isPosOrNeg) {
 
 function onCanvasClick(ev) {
     ev.stopPropagation()
-    checkForLine(ev)
+    checkForSelectedLine(ev)
     renderMeme()
 }
 
@@ -95,4 +95,13 @@ function onAddEmoji(ev) {
     ev.stopPropagation()
     addEmoji(ev.target.value)
     renderMeme()
+}
+
+function onCanvasMove(ev) {
+    ev.stopPropagation()
+    // const isOnLine = check
+}
+
+function onCanvasUp(ev) {
+
 }

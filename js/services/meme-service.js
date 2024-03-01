@@ -122,11 +122,11 @@ function addLocations() {
     }
 }
 
-function checkForLine(ev) {
+function checkForSelectedLine(ev) {
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
     const lines = gMeme.lines
-    if (clickedX > 400 || clickedX < 50) return
+    if (clickedX > gElCanvas.width - (gElCanvas.width / 9) || clickedX < gElCanvas.width / 9) return
     const idxOfSelectedLine = lines.findIndex(line => line.location.y <= clickedY && line.location.yEnd >= clickedY)
     if (idxOfSelectedLine === -1) return
     gMeme.selectedLineIdx = idxOfSelectedLine

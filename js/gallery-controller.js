@@ -24,4 +24,3 @@ function onSelectImg(ev) {
     setBorderSize()
     renderMeme()
 }
-
