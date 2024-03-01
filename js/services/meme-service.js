@@ -10,10 +10,6 @@ function getMeme() {
     return gMeme
 }
 
-function getImages() {
-    return gImgs
-}
-
 function changePosition(val) {
     const currLine = gMeme.lines[gMeme.selectedLineIdx]
     switch (val) {
@@ -54,13 +50,12 @@ function changeFontFamily(fontName) {
 }
 
 function setLineTxt(userTxt) {
+    if(gMeme.selectedLineIdx === -1) {
+        alert('No lines to type on. Add a line, please.')
+        return
+    }
     gMeme.lines[gMeme.selectedLineIdx].txt = userTxt
     addHighlight(gMeme.lines[gMeme.selectedLineIdx])
-}
-
-function setImg(elImg) {
-    const elImgNumId = elImg.id.substring(3)
-    gMeme.selectedImgId = +elImgNumId
 }
 
 function setTxtColor(val) {
@@ -111,7 +106,7 @@ function setLineIdx(numOfIdx) {
 
 function addLine() {
     gMeme.lines.push({ txt: '', size: 30, color: 'white', fontFamily: 'Impact' })
-    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    gMeme.selectedLineIdx++
 }
 
 function addLocations() {
@@ -127,7 +122,6 @@ function addLocations() {
     }
 }
 
-
 function checkForLine(ev) {
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
@@ -138,3 +132,7 @@ function checkForLine(ev) {
     gMeme.selectedLineIdx = idxOfSelectedLine
 }
 
+function deleteLine() {
+    gMeme.selectedLineIdx -= 1
+    gMeme.lines.pop()
+}

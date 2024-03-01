@@ -14,8 +14,8 @@ function renderMeme() {
 }
 
 function coverCanvasWithImg(elImg) {
-    gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
     gElCanvas.width = elImg.naturalWidth
+    gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
@@ -83,4 +83,10 @@ function onChangeTextAlign(ev) {
 function onPositionChange(ev, isUpOrDown) {
     ev.stopPropagation()
     changePosition(isUpOrDown)
+}
+
+function onDeleteLine(ev) {
+    ev.stopPropagation()
+    deleteLine()
+    renderMeme()
 }

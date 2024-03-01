@@ -62,7 +62,7 @@
                 </select>
                 <button class="btn position-text-up" onclick="onPositionChange(event, -1)"></button>
                 <button class="btn position-text-down" onclick="onPositionChange(event, 1)"></button>
-                <button class="btn delete-btn">Delete Line</button>
+                <button class="btn delete-btn" onclick="onDeleteLine(event)">Delete Line</button>
                 </div>
             </div>
            
@@ -79,6 +79,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/services/gallery-service.js"></script>
     <script src="js/services/meme-service.js"></script>
     <script src="js/gallery-controller.js"></script>
     <script src="js/meme-controller.js"></script>
