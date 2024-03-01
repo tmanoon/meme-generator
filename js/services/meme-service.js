@@ -136,3 +136,8 @@ function deleteLine() {
     gMeme.selectedLineIdx -= 1
     gMeme.lines.pop()
 }
+
+function addEmoji(emoji) {
+    gMeme.lines[gMeme.selectedLineIdx].txt += emoji
+    elTextInput.value += emoji + ''
+}

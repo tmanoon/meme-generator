@@ -90,3 +90,9 @@ function onDeleteLine(ev) {
     deleteLine()
     renderMeme()
 }
+
+function onAddEmoji(ev) {
+    ev.stopPropagation()
+    addEmoji(ev.target.value)
+    renderMeme()
+}
