@@ -1,5 +1,5 @@
 .meme-editor {
-    width: 100dvw;
+    height: 60dvh;
 }
 
 .canvas-container {
@@ -60,4 +60,8 @@
     padding: 5px;
     border-radius: 8px;
     opacity: 0;
+}
+
+.second-set-controls > .position-text-left {
+    
 }

@@ -1,7 +1,7 @@
 
 .navigation-bar {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;   
+    grid-template-rows: 1fr 1fr 1fr;
     padding-block: 30px; 
 }
 
@@ -19,7 +19,7 @@
     grid-template-columns: 1fr 1fr;
     gap: .5em;
     align-items: end;
-    width: 100%;
+    width: 70dvw;
 }
 
 .gallery {

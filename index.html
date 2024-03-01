@@ -34,13 +34,38 @@
             </div>
             <div class="user-edits">
                 <input type="text" class="text-input" id="text-input" placeholder="Add your text" onkeyup="removeBorder()" oninput="onChangeText(event, this.value)">
+                
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
                 <input type="color" value="#ffffff" oninput="onChangeTxtColor(this.value, event)">
                 <button class="btn increase-font-btn" onclick="onSizeBtn(event, 1)"></button>
                 <button class="btn decrease-font-btn" onclick="onSizeBtn(event, -1)"></button>
                 <button class="btn add-line-btn" onclick="onAddLine(event)"></button>
                 <button class="btn switch-line-btn" onclick="onSwitchLine(event)"></button>
+                <div class="second-set-controls">
+                <select name="font-select" id="select-font">
+                    <option value="dafault">Impact</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="tahoma">Tahoma</option>
+                    <option value="arial">Arial</option>
+                    <option value="courier">Courier New</option>
+                </select>
+                <select name="font-size-select" id="font-size">
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                </select>
+                <select name="align-text-select">
+                    <option value="center">Center</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
+                <button class="position-text-right"></button>
+                <button class="position-text-left"></button>
+                <button class="btn delete-btn">Delete Line</button>
+                </div>
             </div>
+           
         </section>
 
         <section class="about">
