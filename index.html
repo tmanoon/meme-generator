@@ -33,7 +33,7 @@
                 <div class="border-of-text"></div>
             </div>
             <div class="user-edits">
-                <input type="text" class="text-input" id="text-input" placeholder="Add your text" onkeyup="removeBorder()" oninput="onChangeText(event, this.value)">
+                <input type="text" class="text-input" id="text-input" placeholder="Add your text" onkeyup="removeBorder()" oninput="onChangeText(event)">
                 
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
                 <input type="color" value="#ffffff" oninput="onChangeTxtColor(this.value, event)">
@@ -42,14 +42,14 @@
                 <button class="btn add-line-btn" onclick="onAddLine(event)"></button>
                 <button class="btn switch-line-btn" onclick="onSwitchLine(event)"></button>
                 <div class="second-set-controls">
-                <select name="font-select" id="select-font">
+                <select name="font-select" id="select-font" onchange="onChangeFontFamily(event)">
                     <option value="dafault">Impact</option>
-                    <option value="verdana">Verdana</option>
-                    <option value="tahoma">Tahoma</option>
-                    <option value="arial">Arial</option>
-                    <option value="courier">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Courier New">Courier New</option>
                 </select>
-                <select name="font-size-select" id="font-size">
+                <select name="font-size-select" onchange="onChangeFontSize(event)" id="font-size">
                     <option value="20">20</option>
                     <option value="25">25</option>
                     <option value="30">30</option>
@@ -60,8 +60,8 @@
                     <option value="left">Left</option>
                     <option value="right">Right</option>
                 </select>
-                <button class="position-text-right"></button>
                 <button class="position-text-left"></button>
+                <button class="position-text-right"></button>
                 <button class="btn delete-btn">Delete Line</button>
                 </div>
             </div>

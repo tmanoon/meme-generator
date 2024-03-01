@@ -3,7 +3,7 @@ const elBorder = document.querySelector('.border-of-text')
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
-    lines: [{ txt: 'Type your text', size: 30, color: 'white' }]
+    lines: [{ txt: 'Type your text', size: 30, color: 'white', fontFamily: 'Impact' }]
 }
 
 function getMeme() {
@@ -12,6 +12,14 @@ function getMeme() {
 
 function getImages() {
     return gImgs
+}
+
+function changeFontSize(size) {
+    gMeme.lines[gMeme.selectedLineIdx].size = size
+}
+
+function changeFontFamily(fontName) {
+    gMeme.lines[gMeme.selectedLineIdx].fontFamily = fontName
 }
 
 function setLineTxt(userTxt) {
@@ -30,7 +38,7 @@ function setTxtColor(val) {
 
 function setText() {
     gMeme.lines.forEach((line, idx) => {
-        gCtx.font = `${(line.size)}px Impact`
+        gCtx.font = `${(line.size)}px ${line.fontFamily}`
         gCtx.strokeStyle = 'black'
         gCtx.lineWidth = 4
         gCtx.beginPath()
@@ -71,7 +79,7 @@ function setLineIdx(numOfIdx) {
 }
 
 function addLine() {
-    gMeme.lines.push({ txt: '', size: 30, color: 'white' })
+    gMeme.lines.push({ txt: '', size: 30, color: 'white', fontFamily: 'Impact'})
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 

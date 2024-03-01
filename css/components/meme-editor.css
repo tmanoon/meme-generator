@@ -1,10 +1,11 @@
 .meme-editor {
-    height: 60dvh;
+    width: minmax(300px, 60vw);
 }
 
 .canvas-container {
     position: relative;
-    width: inherit;
+    /* width: 60dvw; */
+    /* width: inherit; */
 }
 
 .user-edits>.download-btn::before {
@@ -50,7 +51,7 @@
 }
 
 .border-of-text {
-    box-sizing: content-box;
+    box-sizing: border-box;
     position: absolute;
     top: 0;
     width: 0;
@@ -62,6 +63,12 @@
     opacity: 0;
 }
 
-.second-set-controls > .position-text-left {
-    
+.second-set-controls > .position-text-left::before,  .second-set-controls > .position-text-right::before{
+    font-family: fa;
+}
+.second-set-controls > .position-text-right::before {
+    content: "\f0a9"
+}
+.second-set-controls > .position-text-left::before {
+    content: "\f0a8"
 }

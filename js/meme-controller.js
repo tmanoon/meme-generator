@@ -15,7 +15,7 @@ function renderMeme() {
 
 function coverCanvasWithImg(elImg) {
     gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
-    gElCanvas.width = elSecMemeEditor.offsetWidth
+    gElCanvas.width = elImg.naturalWidth
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
@@ -60,5 +60,17 @@ function onSizeBtn(ev, isPositive) {
 function onCanvasClick(ev) {
     ev.stopPropagation()
     checkForLine(ev)
+    renderMeme()
+}
+
+function onChangeFontFamily(ev) {
+    ev.stopPropagation()
+    changeFontFamily(ev.target.value)
+    renderMeme()
+}
+
+function onChangeFontSize(ev) {
+    ev.stopPropagation()
+    changeFontSize(ev.target.value)
     renderMeme()
 }
