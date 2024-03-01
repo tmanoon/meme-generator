@@ -30,11 +30,14 @@ function setTxtColor(val) {
 
 function setText() {
     gMeme.lines.forEach((line, idx) => {
-        gCtx.font = `${(line.size)}px Verdana`
+        gCtx.font = `${(line.size)}px Impact`
+        gCtx.strokeStyle = 'black'
+        gCtx.lineWidth = 4
         gCtx.beginPath()
         // I chose this proportion, 1/9 from each side out of the canvas' width.
         gCtx.fillStyle = line.color
         gCtx.textBaseline = "bottom";
+        gCtx.strokeText(line.txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2))
         gCtx.fillText(line.txt, gElCanvas.width / 9, gElCanvas.width / 9 + (idx * 50), gElCanvas.width - ((gElCanvas.width / 9) * 2))
         gCtx.closePath()
     })
