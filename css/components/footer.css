@@ -1,3 +1,6 @@
 footer > .logo, footer > small {
     font-family: luckiestguy;
 }
+footer > small {
+    font-size: .6em;
+}
