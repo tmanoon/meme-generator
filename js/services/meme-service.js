@@ -14,6 +14,20 @@ function getImages() {
     return gImgs
 }
 
+function changePosition(val) {
+    const currLine = gMeme.lines[gMeme.selectedLineIdx]
+    switch (val) {
+        case 1:
+            if((currLine.location.y + gElCanvas.height / 9) >= gElCanvas.height - (gElCanvas.height / 9)) break
+            currLine.location.y += gElCanvas.height / 9
+            break
+        case -1: 
+            if(currLine.location.y <= gElCanvas.height / 9) break
+            currLine.location.y -= gElCanvas.height / 9
+    }
+    currLine.location.yEnd = currLine.location.y + gElCanvas.height / 9
+}
+
 function changeTextAlign(alignVal) {
     const currLine = gMeme.lines[gMeme.selectedLineIdx]
     switch (alignVal) {
@@ -41,7 +55,7 @@ function changeFontFamily(fontName) {
 
 function setLineTxt(userTxt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = userTxt
-    addHighlight(gMeme.lines[gMeme.selectedLineIdx], gMeme.selectedLineIdx)
+    addHighlight(gMeme.lines[gMeme.selectedLineIdx])
 }
 
 function setImg(elImg) {
@@ -68,11 +82,11 @@ function setText() {
     })
 }
 
-function addHighlight(memeLine, idx) {
-    const top = gElCanvas.width / 9 - memeLine.size + ((gElCanvas.width / 9) * idx)
+function addHighlight(memeLine) {
+    const top = memeLine.location.y - memeLine.size - 5
     elBorder.style.top = top + 'px'
-    elBorder.style.width = gElCanvas.width - (2 * (gElCanvas.width / 9)) + 'px'
-    elBorder.style.marginInline = gElCanvas.width / 9 + 'px'
+    elBorder.style.width = gCtx.measureText(memeLine.txt).width + 'px'
+    elBorder.style.left = memeLine.location.x + 'px'
     elBorder.style.height = memeLine.size + 'px'
     elBorder.style.opacity = 1
 }

@@ -51,9 +51,9 @@ function onSwitchLine(ev) {
     renderMeme()
 }
 
-function onSizeBtn(ev, isPositive) {
+function onSizeBtn(ev, isPosOrNeg) {
     ev.stopPropagation()
-    setSize(5 * isPositive)
+    setSize(5 * isPosOrNeg)
     renderMeme()
 }
 
@@ -78,4 +78,9 @@ function onChangeFontSize(ev) {
 function onChangeTextAlign(ev) {
     ev.stopPropagation()
     changeTextAlign(ev.target.value)
+}
+
+function onPositionChange(ev, isUpOrDown) {
+    ev.stopPropagation()
+    changePosition(isUpOrDown)
 }
