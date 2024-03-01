@@ -36,7 +36,7 @@
                 <input type="text" class="text-input" id="text-input" placeholder="Add your text" onkeyup="removeBorder()" oninput="onChangeText(event)">
                 
                 <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
-                <input type="color" value="#ffffff" oninput="onChangeTxtColor(this.value, event)">
+                <input type="color" value="#ffffff" oninput="onChangeTxtColor(event)">
                 <button class="btn increase-font-btn" onclick="onSizeBtn(event, 1)"></button>
                 <button class="btn decrease-font-btn" onclick="onSizeBtn(event, -1)"></button>
                 <button class="btn add-line-btn" onclick="onAddLine(event)"></button>
@@ -55,13 +55,13 @@
                     <option value="30">30</option>
                     <option value="35">35</option>
                 </select>
-                <select name="align-text-select">
-                    <option value="center">Center</option>
+                <select name="align-text-select" onchange="onChangeTextAlign(event)">
                     <option value="left">Left</option>
+                    <option value="center">Center</option>
                     <option value="right">Right</option>
                 </select>
-                <button class="position-text-left"></button>
-                <button class="position-text-right"></button>
+                <button class="btn position-text-up"></button>
+                <button class="btn position-text-down"></button>
                 <button class="btn delete-btn">Delete Line</button>
                 </div>
             </div>

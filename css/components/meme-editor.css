@@ -63,12 +63,12 @@
     opacity: 0;
 }
 
-.second-set-controls > .position-text-left::before,  .second-set-controls > .position-text-right::before{
+.second-set-controls > .position-text-down::before,  .second-set-controls > .position-text-up::before{
     font-family: fa;
 }
-.second-set-controls > .position-text-right::before {
-    content: "\f0a9"
+.second-set-controls > .position-text-up::before {
+    content: "\f35b";
 }
-.second-set-controls > .position-text-left::before {
-    content: "\f0a8"
+.second-set-controls > .position-text-down::before {
+    content: "\f358";
 }

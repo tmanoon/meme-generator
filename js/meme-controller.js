@@ -9,8 +9,8 @@ function renderMeme() {
     const meme = getMeme()
     const selectedImg = gElGallery.querySelector(`#img${meme.selectedImgId}`)
     coverCanvasWithImg(selectedImg)
-    setText()
     addLocations()
+    setText()
 }
 
 function coverCanvasWithImg(elImg) {
@@ -19,9 +19,9 @@ function coverCanvasWithImg(elImg) {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function onChangeText(ev, val) {
+function onChangeText(ev) {
     ev.stopPropagation()
-    setLineTxt(val)
+    setLineTxt(ev.target.value)
     renderMeme()
 }
 
@@ -30,9 +30,9 @@ function onDownloadClick(elLink) {
     elLink.href = imgContent
 }
 
-function onChangeTxtColor(val, ev) {
+function onChangeTxtColor(ev) {
     ev.stopPropagation()
-    setTxtColor(val)
+    setTxtColor(ev.target.value)
     renderMeme()
 }
 
@@ -73,4 +73,9 @@ function onChangeFontSize(ev) {
     ev.stopPropagation()
     changeFontSize(ev.target.value)
     renderMeme()
+}
+
+function onChangeTextAlign(ev) {
+    ev.stopPropagation()
+    changeTextAlign(ev.target.value)
 }
