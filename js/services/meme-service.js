@@ -77,7 +77,7 @@ function setText() {
         gCtx.beginPath()
         // I chose this proportion, 1/9 from each side out of the canvas' width.
         gCtx.fillStyle = line.color
-        gCtx.textBaseline = "bottom";
+        gCtx.textBaseline = "top"
         gCtx.strokeText(line.txt, line.location.x, line.location.y, gElCanvas.width - (canvasLeftBorderSize * 2))
         gCtx.fillText(line.txt, line.location.x, line.location.y, gElCanvas.width - (canvasLeftBorderSize * 2))
         gCtx.closePath()
@@ -85,11 +85,11 @@ function setText() {
 }
 
 function addHighlight(memeLine) {
-    const top = memeLine.location.y - memeLine.size - 5
+    const top = memeLine.location.y - 5
     elBorder.style.top = top + 'px'
-    elBorder.style.width = gCtx.measureText(memeLine.txt).width + 'px'
-    elBorder.style.left = memeLine.location.x + 'px'
-    elBorder.style.height = memeLine.size + 'px'
+    elBorder.style.width = gCtx.measureText(memeLine.txt).width + 5 + 'px'
+    elBorder.style.left = memeLine.location.x - 5 + 'px'
+    elBorder.style.height = memeLine.size + 5 + 'px'
     elBorder.style.opacity = 1
 }
 
