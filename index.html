@@ -38,16 +38,16 @@
             <div class="user-edits">
                 <input type="text" class="text-input" id="text-input" placeholder="Add your text"
                     onkeyup="removeBorder()" oninput="onChangeText(event)">
-                <div class="second-row">
+                <div class="second-row row">
                     <input type="color" value="#ffffff" oninput="onChangeTxtColor(event)">
                     <button class="btn increase-font-btn fa" onclick="onSizeBtn(event, 1)"></button>
                     <button class="btn decrease-font-btn fa" onclick="onSizeBtn(event, -1)"></button>
                 </div>
-                <div class="third-row">
+                <div class="third-row row">
                 <button class="btn add-line-btn fa" onclick="onAddLine(event)"></button>
                 <button class="btn switch-line-btn fa" onclick="onSwitchLine(event)"></button>
             </div>
-                <div class="second-set-controls fourth-row">
+                <div class="second-set-controls fourth-row row">
                     <select name="font-select" id="select-font" onchange="onChangeFontFamily(event)">
                         <option value="Impact">Impact</option>
                         <option value="Verdana">Verdana</option>
@@ -69,8 +69,8 @@
                     <button class="btn position-text-up fa" onclick="onPositionChange(event, -1)"></button>
                     <button class="btn position-text-down fa" onclick="onPositionChange(event, 1)"></button>
                     </div>
-                    <div class="fifth-row">
-                    <button class="btn delete-btn" onclick="onDeleteLine(event)">Delete Line</button>
+                    <div class="fifth-row row">
+                    <button class="btn delete-btn luckiest" onclick="onDeleteLine(event)">Delete Line</button>
                     <select id="emoji-select" onchange="onAddEmoji(event)">
                         <option value="🥸">🥸</option>
                         <option value="🤪">🤪</option>
@@ -82,9 +82,9 @@
                         <option value="🔥">🔥</option>
                     </select>
                 </div>
-                <div class="download-facebook-share sixth-row">
+                <div class="download-facebook-share sixth-row row">
                     <a href="#" class="download-btn fa" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
-                    <button class="btn facebook-btn" onclick="onUploadImg()">Share to Facebook</button>
+                    <button class="btn facebook-btn luckiest" onclick="onUploadImg()">Share to Facebook</button>
                 </div>
             </div>
 

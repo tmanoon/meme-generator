@@ -6,11 +6,12 @@
     position: relative;
 }
 
-.user-edits>.download-facebook-share> .download-btn::before {
+.user-edits>.download-facebook-share>.download-btn::before {
     content: "\f56d";
+    font-size: 2em;
 }
 
-.user-edits>.download-facebook-share> .facebook-btn:hover {
+.user-edits>.download-facebook-share>.facebook-btn:hover {
     background-color: #39569c;
     color: white;
     padding: 2px;
@@ -21,27 +22,27 @@
     cursor: pointer;
 }
 
-.user-edits> .second-row > .increase-font-btn::before {
+.user-edits>.second-row>.increase-font-btn::before {
     content: "\f034";
 }
 
-.user-edits> .second-row > .increase-font-btn:hover::before {
+.user-edits>.second-row>.increase-font-btn:hover::before {
     color: rgba(70, 229, 70, 0.85);
 }
 
-.user-edits>.second-row > .decrease-font-btn::before {
+.user-edits>.second-row>.decrease-font-btn::before {
     content: "\f034";
 }
 
-.user-edits>.second-row > .decrease-font-btn:hover::before {
+.user-edits>.second-row>.decrease-font-btn:hover::before {
     color: rgba(171, 0, 0, 0.87);
 }
 
-.user-edits>.third-row > .add-line-btn::before {
+.user-edits>.third-row>.add-line-btn::before {
     content: "\2b";
 }
 
-.user-edits>.third-row > .switch-line-btn::before {
+.user-edits>.third-row>.switch-line-btn::before {
     content: "\f363";
 }
 
@@ -59,12 +60,14 @@
     opacity: 0;
 }
 
-.second-set-controls > .position-text-down::before,  .second-set-controls > .position-text-up::before{
-}
-.second-set-controls > .position-text-up::before {
+.second-set-controls>.position-text-down::before,
+.second-set-controls>.position-text-up::before {}
+
+.second-set-controls>.position-text-up::before {
     content: "\f35b";
 }
-.second-set-controls > .position-text-down::before {
+
+.second-set-controls>.position-text-down::before {
     content: "\f358";
 }
 
@@ -90,4 +93,33 @@
 
 .sixth-row {
     grid-row: 6;
+}
+
+.user-edits>.text-input {
+    height: 3.6em;
+}
+
+.user-edits>.third-row>.switch-line-btn:hover {
+    color: rgb(199, 0, 199);   
+}
+
+.user-edits>.third-row>.add-line-btn:hover {
+    color:rgb(90, 228, 255)
+}
+
+.user-edits > .fourth-row > .position-text-down:hover {
+    color: aliceblue;
+}
+
+.user-edits > .fourth-row > .position-text-up:hover {
+    color: rgb(162, 162, 162);
+}
+
+.user-edits > .fifth-row > .delete-btn:hover {
+    background-color: rgb(203, 0, 0);
+    color: aliceblue;
+}
+
+.btn {
+    font-size: 2em;
 }
