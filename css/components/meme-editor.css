@@ -1,16 +1,19 @@
 .meme-editor {
-    width: minmax(300px, 60vw);
+    background-color: rgba(218, 218, 218, 0.825);
 }
 
 .canvas-container {
     position: relative;
-    /* width: 60dvw; */
-    /* width: inherit; */
 }
 
-.user-edits>.download-btn::before {
+.user-edits>.download-facebook-share> .download-btn::before {
     content: "\f56d";
-    font-family: fa;
+}
+
+.user-edits>.download-facebook-share> .facebook-btn:hover {
+    background-color: #39569c;
+    color: white;
+    padding: 2px;
 }
 
 .user-edits>input[type="color"],
@@ -18,42 +21,34 @@
     cursor: pointer;
 }
 
-
-/* edit later and try to add icon */
-.user-edits>input[type="color"] {}
-
-.user-edits>.increase-font-btn::before {
-    font-family: fa;
+.user-edits> .second-row > .increase-font-btn::before {
     content: "\f034";
 }
 
-.user-edits>.increase-font-btn:hover::before {
+.user-edits> .second-row > .increase-font-btn:hover::before {
     color: rgba(70, 229, 70, 0.85);
 }
 
-.user-edits>.decrease-font-btn::before {
-    font-family: fa;
+.user-edits>.second-row > .decrease-font-btn::before {
     content: "\f034";
 }
 
-.user-edits>.decrease-font-btn:hover::before {
+.user-edits>.second-row > .decrease-font-btn:hover::before {
     color: rgba(171, 0, 0, 0.87);
 }
 
-.user-edits>.add-line-btn::before {
+.user-edits>.third-row > .add-line-btn::before {
     content: "\2b";
-    font-family: fa;
 }
 
-.user-edits>.switch-line-btn::before {
+.user-edits>.third-row > .switch-line-btn::before {
     content: "\f363";
-    font-family: fa;
 }
 
 .border-of-text {
     box-sizing: content-box;
     position: absolute;
-    lest: 0;
+    left: 0;
     top: 0;
     width: 0;
     height: 0;
@@ -65,11 +60,34 @@
 }
 
 .second-set-controls > .position-text-down::before,  .second-set-controls > .position-text-up::before{
-    font-family: fa;
 }
 .second-set-controls > .position-text-up::before {
     content: "\f35b";
 }
 .second-set-controls > .position-text-down::before {
     content: "\f358";
+}
+
+.text-input {
+    grid-row: 1;
+}
+
+.second-row {
+    grid-row: 2;
+}
+
+.third-row {
+    grid-row: 3;
+}
+
+.fourth-row {
+    grid-row: 4;
+}
+
+.fifth-row {
+    grid-row: 5;
+}
+
+.sixth-row {
+    grid-row: 6;
 }

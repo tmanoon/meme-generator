@@ -1,6 +1,19 @@
-.gallery > img {
+.gallery>img {
     max-width: 100%;
     object-fit: contain;
     grid-column: span 1;
     display: block;
+}
+
+.gallery>img:hover {
+    scale: 0.7;
+    transition: scale .7s;
+    box-shadow: -1px -1px 44px 13px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: -1px -1px 44px 13px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: -1px -1px 44px 13px rgba(0, 0, 0, 0.63);
+    border-radius: 9px;
+}
+
+.gallery {
+    background-color: rgba(218, 218, 218, 0.825);
 }

@@ -11,13 +11,16 @@
 <body onload="onInit()">
     <header>
         <nav class="navigation-bar">
-            <h1 class="self-center align-center">Meme-me.</h1>
-            <div class="logo-container">
-                <img src="img/logo/manoon.png" class="logo-img self-center manoon">
-                <img src="img/logo/kashoosh.jpg" class="logo-img self-center kashoosh">
+            <div class="logo-and-pics">
+                <h1>Meme-me.</h1>
+                <div class="logo-container">
+                    <img src="img/logo/manoon.png" class="logo-img manoon">
+                    <img src="img/logo/kashoosh.png" class="logo-img kashoosh">
+                </div>
             </div>
             <ul class="list sections-list">
-                <li class="align-center"><a href="#" onclick="renderGallery()" class="align-center self-center">Gallery</a></li>
+                <li class="align-center"><a href="#" onclick="renderGallery()"
+                        class="align-center self-center">Gallery</a></li>
                 <li class="align-center"><a href="#" class="align-center self-center">About</a></li>
             </ul>
         </nav>
@@ -33,52 +36,58 @@
                 <div class="border-of-text"></div>
             </div>
             <div class="user-edits">
-                <input type="text" class="text-input" id="text-input" placeholder="Add your text" onkeyup="removeBorder()" oninput="onChangeText(event)">
-                
-                <a href="#" class="download-btn" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
-                <input type="color" value="#ffffff" oninput="onChangeTxtColor(event)">
-                <button class="btn increase-font-btn" onclick="onSizeBtn(event, 1)"></button>
-                <button class="btn decrease-font-btn" onclick="onSizeBtn(event, -1)"></button>
-                <button class="btn add-line-btn" onclick="onAddLine(event)"></button>
-                <button class="btn switch-line-btn" onclick="onSwitchLine(event)"></button>
-                <div class="second-set-controls">
-                <select name="font-select" id="select-font" onchange="onChangeFontFamily(event)">
-                    <option value="dafault">Impact</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Tahoma">Tahoma</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Courier New">Courier New</option>
-                </select>
-                <select name="font-size-select" onchange="onChangeFontSize(event)" id="font-size">
-                    <option value="20">20</option>
-                    <option value="25">25</option>
-                    <option value="30">30</option>
-                    <option value="35">35</option>
-                </select>
-                <select name="align-text-select" onchange="onChangeTextAlign(event)">
-                    <option value="left">Left</option>
-                    <option value="center">Center</option>
-                    <option value="right">Right</option>
-                </select>
-                <button class="btn position-text-up" onclick="onPositionChange(event, -1)"></button>
-                <button class="btn position-text-down" onclick="onPositionChange(event, 1)"></button>
-                <button class="btn delete-btn" onclick="onDeleteLine(event)">Delete Line</button>
-                <select id="emoji-select" onchange="onAddEmoji(event)">
-                    <option value="🥸">🥸</option>
-                    <option value="🤪">🤪</option>
-                    <option value="💩">💩</option>
-                    <option value="👽">👽</option>
-                    <option value="🦜">🦜</option>
-                    <option value="😈">😈</option>
-                    <option value="🖕">🖕</option>
-                    <option value="🔥">🔥</option>
-                </select>
+                <input type="text" class="text-input" id="text-input" placeholder="Add your text"
+                    onkeyup="removeBorder()" oninput="onChangeText(event)">
+                <div class="second-row">
+                    <input type="color" value="#ffffff" oninput="onChangeTxtColor(event)">
+                    <button class="btn increase-font-btn fa" onclick="onSizeBtn(event, 1)"></button>
+                    <button class="btn decrease-font-btn fa" onclick="onSizeBtn(event, -1)"></button>
                 </div>
-                <div class="facebook-share">
-                    <button class="btn" onclick="onUploadImg()"> Upload to Facebook </button>
+                <div class="third-row">
+                <button class="btn add-line-btn fa" onclick="onAddLine(event)"></button>
+                <button class="btn switch-line-btn fa" onclick="onSwitchLine(event)"></button>
+            </div>
+                <div class="second-set-controls fourth-row">
+                    <select name="font-select" id="select-font" onchange="onChangeFontFamily(event)">
+                        <option value="Impact">Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                    <select name="font-size-select" onchange="onChangeFontSize(event)" id="font-size">
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                    </select>
+                    <select name="align-text-select" onchange="onChangeTextAlign(event)">
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                    </select>
+                    <button class="btn position-text-up fa" onclick="onPositionChange(event, -1)"></button>
+                    <button class="btn position-text-down fa" onclick="onPositionChange(event, 1)"></button>
+                    </div>
+                    <div class="fifth-row">
+                    <button class="btn delete-btn" onclick="onDeleteLine(event)">Delete Line</button>
+                    <select id="emoji-select" onchange="onAddEmoji(event)">
+                        <option value="🥸">🥸</option>
+                        <option value="🤪">🤪</option>
+                        <option value="💩">💩</option>
+                        <option value="👽">👽</option>
+                        <option value="🦜">🦜</option>
+                        <option value="😈">😈</option>
+                        <option value="🖕">🖕</option>
+                        <option value="🔥">🔥</option>
+                    </select>
+                </div>
+                <div class="download-facebook-share sixth-row">
+                    <a href="#" class="download-btn fa" onclick="onDownloadClick(this)" download="my-meme.jpg"></a>
+                    <button class="btn facebook-btn" onclick="onUploadImg()">Share to Facebook</button>
                 </div>
             </div>
-           
+
         </section>
 
         <section class="about">
@@ -90,12 +99,12 @@
         <div class="logo self-center align-end">Meme-me.</div>
         <small class="align-center">© All rights reserved to Shoval S , 2023</small>
     </footer>
-    
+
     <script src="js/meme-controller.js"></script>
     <script src="js/services/meme-service.js"></script>
     <script src="js/services/gallery-service.js"></script>
     <script src="js/gallery-controller.js"></script>
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

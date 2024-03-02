@@ -18,3 +18,7 @@
 .align-end {
     align-self: end;
 }
+
+.fa {
+    font-family: fa;
+}
