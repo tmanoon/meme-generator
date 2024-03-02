@@ -17,6 +17,10 @@ function coverCanvasWithImg(elImg) {
     gElCanvas.width = elImg.naturalWidth
     gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+    canvasRightBorderSize = gElCanvas.width - (gElCanvas.width / 9)
+    canvasLeftBorderSize = gElCanvas.width / 9
+    canvasBottomBorderSize = gElCanvas.height - (gElCanvas.height / 9)
+    canvasTopBorderSize = gElCanvas.height / 9
 }
 
 function onChangeText(ev) {
@@ -99,6 +103,8 @@ function onAddEmoji(ev) {
 
 function onCanvasMove(ev) {
     ev.stopPropagation()
+    canvasMove(ev)
+    // renderMeme()
     // const isOnLine = check
 }
 

@@ -17,18 +17,6 @@ function addImgListeners() {
     })
 }
 
-function addImgMouseListeners(img) {
-    img.addEventListener('click', onSelectImg)
-    // img.addEventListener('mousemove', onMove)
-    // gElCanvas.addEventListener('mouseup', onUp)
-}
-
-function addImgTouchListeners(img) {
-    img.addEventListener('touchstart', onSelectImg)
-    // gElCanvas.addEventListener('touchmove', onMove)
-    // gElCanvas.addEventListener('touchend', onUp)
-}
-
 function _createImages() {
     gImgs = []
     for (let i = 1; i <= 18; i++) {
