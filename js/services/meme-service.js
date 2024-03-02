@@ -70,7 +70,7 @@ function setTxtColor(val) {
 }
 
 function setText() {
-    gMeme.lines.forEach((line, idx) => {
+    gMeme.lines.forEach(line=> {
         gCtx.font = `${(line.size)}px ${line.fontFamily}`
         gCtx.strokeStyle = 'black'
         gCtx.lineWidth = 4
@@ -164,4 +164,25 @@ function canvasMove(ev) {
 
 function canvasUp() {
     isClicked = false
+}
+
+function addLineOnCanvas(ev) {
+    const clickedX = ev.offsetX
+    const clickedY = ev.offsetY
+    elTextInput.value = ''
+    addLine()
+    const lineAdded = gMeme.lines[gMeme.selectedLineIdx]
+    lineAdded.location = {
+        x: clickedX,
+        y: clickedY,
+        xEnd: clickedX,
+        yEnd: clickedY
+    }
+}
+
+function setLocation() {
+    gMeme.lines.forEach(line => {
+        line.location.xEnd = line.location.x + gCtx.measureText(line.txt).width,
+        line.location.yEnd = line.location.y + line.size
+    })
 }

@@ -11,6 +11,7 @@ function renderMeme() {
     coverCanvasWithImg(selectedImg)
     addLocations()
     setText()
+    setLocations()
 }
 
 function coverCanvasWithImg(elImg) {
@@ -119,20 +120,7 @@ function onCanvasUp(ev) {
     renderMeme()
 }
 
-function onImgInput(ev) {
-    if (gElGallery.style.display != 'none') gElGallery.style.display = 'none'
-    elSecMemeEditor.style.display = 'grid'
-
-    const file = ev.target.files[0]
-    const reader = new FileReader()
-    reader.onload = function(event) {
-        const img = new Image() 
-        img.src = event.target.result 
-        img.onload = function() {
-            coverCanvasWithImg({ target: img })
-        }
-    }
-    reader.readAsDataURL(file)
-    setBorderSize()
+function onAddLineOnCanvas(ev) {
+    addLineOnCanvas(ev)
     renderMeme()
 }
