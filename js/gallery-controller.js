@@ -1,6 +1,6 @@
 'use strict'
 
-var gImgs = []
+var gImgs
 const gElGallery = document.querySelector('.gallery')
 const elSecMemeEditor = document.querySelector('.meme-editor')
 

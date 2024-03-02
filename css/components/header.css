@@ -48,3 +48,13 @@
 .choose-yours {
     grid-column: 2;
 }
+
+ .flexible > .flexible-btn {
+    font-size: .6em;
+    background-color: transparent;
+    border: none;
+}
+
+ .flexible > .flexible-btn:hover {
+    text-shadow: 2px 0 #3ead66, -2px 0 #d73535, 0 0px #482ee3, -2px 2px #e848d3, -2px -2px #48e5d7, 1px -2px #fff32d, -1px 2px #c07aff, 0 -2px #ffd273;
+}

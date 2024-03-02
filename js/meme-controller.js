@@ -124,3 +124,11 @@ function onAddLineOnCanvas(ev) {
     addLineOnCanvas(ev)
     renderMeme()
 }
+
+function onImFlexible() {
+    imFlexible()
+    if (gElGallery.style.display != 'none') gElGallery.style.display = 'none'
+    elSecMemeEditor.style.display = 'grid'
+    setBorderSize()
+    renderMeme()
+}

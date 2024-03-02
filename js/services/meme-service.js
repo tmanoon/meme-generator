@@ -9,10 +9,16 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [{ txt: 'Type your text', size: 30, color: 'white', fontFamily: 'Impact', textAlign: 'right' }]
 }
+let randTxt = ['יא מלעונה', 'תלך כפרה עלי', 'Are you a joke store???', 'A SMOOOOTH criminal', 'Hello Im Tova Gamzoo', 'Im a genie in a bottle', 'Your mother is so poor that she can\'t even pay attention']
 let isClicked = false
 
 function getMeme() {
     return gMeme
+}
+
+function imFlexible() {
+    gMeme.selectedImgId = getRandomIntInclusive(0, gImgs.length - 1)
+    gMeme.lines[0].txt = randTxt[getRandomIntInclusive(0, randTxt.length - 1)]
 }
 
 function changePosition(val) {
@@ -180,7 +186,7 @@ function addLineOnCanvas(ev) {
     }
 }
 
-function setLocation() {
+function setLocations() {
     gMeme.lines.forEach(line => {
         line.location.xEnd = line.location.x + gCtx.measureText(line.txt).width,
         line.location.yEnd = line.location.y + line.size

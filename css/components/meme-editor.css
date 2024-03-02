@@ -63,9 +63,6 @@
     opacity: 0;
 }
 
-.second-set-controls>.position-text-down::before,
-.second-set-controls>.position-text-up::before {}
-
 .second-set-controls>.position-text-up::before {
     content: "\f35b";
 }
