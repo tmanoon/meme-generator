@@ -2,13 +2,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-block: 30px;
-    padding-inline: 2.4em;
 }
 
 .logo-and-pics {
     grid-column: 1;
     display: flex;
     gap: 1.5em;
+    padding-inline-start: 1em;
 }
 
 
@@ -20,13 +20,13 @@
 }
 
 .sections-list {
-    padding: 0;
     margin: 0;
     height: 100%;
     grid-column: 2;
     display: flex;
     justify-content: end;
     gap: 1em;
+    padding-inline-end: 1em;
 }
 
 .gallery {

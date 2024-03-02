@@ -22,12 +22,6 @@
     font-size: 2.7em;
 }
 
-.sections-list {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-}
-
 .sections-list>li>a {
     color: #ffffff;
     font-size: 1.3em;
