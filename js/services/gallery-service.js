@@ -23,6 +23,7 @@ function addImgMouseListeners(img) {
 
 function addImgTouchListeners(img) {
     img.addEventListener('touchstart', onSelectImg)
+    
 }
 
 function _createImages() {
