@@ -18,7 +18,7 @@ function coverCanvasWithImg(elImg) {
     const imgAspectRatio = elImg.width / elImg.height
     const containerWidth = elSecMemeEditor.querySelector('.canvas-container').offsetWidth
     elImg.width = containerWidth
-    const canvasHeight = containerWidth / imgAspectRatio
+    const canvasHeight = elImg.height
     gElCanvas.width = containerWidth
     gElCanvas.height = canvasHeight
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
