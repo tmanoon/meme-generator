@@ -1,5 +1,6 @@
 .meme-editor {
     background-color: var(--primary2);
+    width: 100vw;
 }
 
 .canvas-container {
