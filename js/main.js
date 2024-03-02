@@ -11,7 +11,7 @@ function addCanvasListeners() {
 }
 
 function addCanvasMouseListeners() {
-    gElCanvas.addEventListener('click', onCanvasClick)
+    gElCanvas.addEventListener('mousedown', onCanvasClick)
     gElCanvas.addEventListener('mousemove', onCanvasMove)
     gElCanvas.addEventListener('mouseup', onCanvasUp)
 }

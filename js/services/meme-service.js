@@ -130,7 +130,7 @@ function addLocations() {
 }
 
 function checkForSelectedLine(ev) {
-    // isClicked = true
+    isClicked = true
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
     const lines = gMeme.lines
@@ -154,11 +154,13 @@ function canvasMove(ev) {
     if (!isClicked) return
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
-    const currLine = gMeme.lines[gMeme.selectedLineIdx]
-    currLine.location.x = clickedX
-    currLine.location.y = clickedY
-    currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
+    const currLine = gMeme.lines[gMeme.selectedLineIdx]    
+    currLine.location.y = clickedY    
     currLine.location.yEnd = currLine.location.y 
+    // currLine.location.x = clickedX
+
+    currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
+
 }
 
 function canvasUp() {
