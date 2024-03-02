@@ -17,6 +17,14 @@ function addImgListeners() {
     })
 }
 
+function addImgMouseListeners(img) {
+    img.addEventListener('click', onSelectImg)
+}
+
+function addImgTouchListeners(img) {
+    img.addEventListener('touchstart', onSelectImg)
+}
+
 function _createImages() {
     gImgs = []
     for (let i = 1; i <= 18; i++) {

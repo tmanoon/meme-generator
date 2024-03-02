@@ -4,7 +4,10 @@
 
 .canvas-container {
     position: relative;
+    grid-column: 1;
 }
+
+
 
 .user-edits>.download-facebook-share>.download-btn::before {
     content: "\f56d";
