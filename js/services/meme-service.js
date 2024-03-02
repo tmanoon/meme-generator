@@ -31,18 +31,20 @@ function changePosition(val) {
 
 function changeTextAlign(alignVal) {
     const currLine = gMeme.lines[gMeme.selectedLineIdx]
+    const textWidth = gCtx.measureText(currLine.txt).width
     switch (alignVal) {
         case 'right':
-            currLine.location.x = gElCanvas.width / 2 + ((gCtx.measureText(currLine.txt).width) / 2)
-            currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
+            currLine.location.x = gElCanvas.width - canvasLeftBorderSize - textWidth
+            currLine.location.xEnd = gElCanvas.width - canvasLeftBorderSize + textWidth
             break
         case 'center':
-            currLine.location.x = gElCanvas.width / 2 - ((gCtx.measureText(currLine.txt).width) / 2)
-            currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
+            currLine.location.x = (gElCanvas.width - textWidth) / 2
+            currLine.location.xEnd = (gElCanvas.width + textWidth) / 2
             break
         case 'left':
             currLine.location.x = canvasLeftBorderSize
-            currLine.location.xEnd = canvasLeftBorderSize + gCtx.measureText(currLine.txt).width
+            currLine.location.xEnd = canvasLeftBorderSize + textWidth
+            break
     }
 }
 
@@ -120,9 +122,9 @@ function addLocations() {
         if (gMeme.lines[i].location) continue
         lines[i].location = {
             x: canvasLeftBorderSize,
-            y: canvasLeftBorderSize + (canvasLeftBorderSize * i),
+            y: canvasTopBorderSize + (canvasTopBorderSize * i),
             xEnd: gCtx.measureText(lines[i].txt).width >= 400 ? 400 : gCtx.measureText(lines[i].txt).width,
-            yEnd: canvasLeftBorderSize * (i + 1)
+            yEnd: canvasTopBorderSize * (i + 1)
         }
     }
 }
@@ -152,6 +154,13 @@ function canvasMove(ev) {
     if (!isClicked) return
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
-    if (clickedX > canvasRightBorderSize || clickedX < canvasLeftBorderSize) return
+    const currLine = gMeme.lines[gMeme.selectedLineIdx]
+    currLine.location.x = clickedX
+    currLine.location.y = clickedY
+    currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
+    currLine.location.yEnd = currLine.location.y 
+}
 
+function canvasUp() {
+    isClicked = false
 }

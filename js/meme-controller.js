@@ -104,10 +104,11 @@ function onAddEmoji(ev) {
 function onCanvasMove(ev) {
     ev.stopPropagation()
     canvasMove(ev)
-    // renderMeme()
-    // const isOnLine = check
+    renderMeme()
 }
 
 function onCanvasUp(ev) {
-
+    ev.stopPropagation()
+    canvasUp()
+    renderMeme()
 }
