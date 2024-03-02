@@ -36,3 +36,15 @@
     max-width: 100%;
     height: 3.875em;
 }
+
+.about-li {
+    grid-column: 3;
+}
+
+.gallery-li {
+    grid-column: 1;
+}
+
+.choose-yours {
+    grid-column: 2;
+}

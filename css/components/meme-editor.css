@@ -1,13 +1,13 @@
 .meme-editor {
-    background-color: rgba(218, 218, 218, 0.825);
+    background-color: var(--primary2);
 }
 
 .canvas-container {
     position: relative;
     grid-column: 1;
+    width: 100%;
+    height: auto;
 }
-
-
 
 .user-edits>.download-facebook-share>.download-btn::before {
     content: "\f56d";

@@ -56,7 +56,6 @@ footer {
 }
 
 .user-edits {
-    grid-column: 2;
     display: grid;
     grid-template-rows: repeat(6, auto);
     padding-inline: 2.4em;

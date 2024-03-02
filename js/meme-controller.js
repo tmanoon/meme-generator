@@ -14,8 +14,11 @@ function renderMeme() {
 }
 
 function coverCanvasWithImg(elImg) {
-    gElCanvas.width = elImg.naturalWidth
-    gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
+    const imgAspectRatio = elImg.naturalWidth / elImg.naturalHeight
+    const containerWidth = elSecMemeEditor.querySelector('.canvas-container').offsetWidth
+    const canvasHeight = containerWidth / imgAspectRatio
+    gElCanvas.width = containerWidth
+    gElCanvas.height = canvasHeight
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
     canvasRightBorderSize = gElCanvas.width - (gElCanvas.width / 9)
     canvasLeftBorderSize = gElCanvas.width / 9
@@ -113,5 +116,23 @@ function onCanvasUp(ev) {
     ev.preventDefault()
     ev.stopPropagation()
     canvasUp()
+    renderMeme()
+}
+
+function onImgInput(ev) {
+    if (gElGallery.style.display != 'none') gElGallery.style.display = 'none'
+    elSecMemeEditor.style.display = 'grid'
+
+    const file = ev.target.files[0]
+    const reader = new FileReader()
+    reader.onload = function(event) {
+        const img = new Image() 
+        img.src = event.target.result 
+        img.onload = function() {
+            coverCanvasWithImg({ target: img })
+        }
+    }
+    reader.readAsDataURL(file)
+    setBorderSize()
     renderMeme()
 }

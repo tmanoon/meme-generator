@@ -1,13 +1,44 @@
-@media (width < 740px) {
+@media (width < 739px) {
     .navigation-bar {
         padding-block: 3dvw;
     }
 
     .meme-editor {
-        width: 100dvw;
+        width: 100vw;
         padding: 0;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 
-   
-}
+    .logo-img {
+        height: 1.875em;
+    }
 
+    .sections-list {
+        width: 50vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .sections-list > li> a {
+        font-size: 0.5em;
+    }
+
+    .sections-list > .choose-yours > p {
+        font-size: 0.6em;
+    }
+
+    .sections-list > .choose-yours > input {
+        width: 90px;
+    }
+
+    .user-edits {
+        grid-row: 2;
+        gap: 1em;
+    }
+
+    .canvas-container {
+        grid-row: 1;
+    }
+
+}

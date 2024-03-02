@@ -157,8 +157,7 @@ function canvasMove(ev) {
     const currLine = gMeme.lines[gMeme.selectedLineIdx]    
     currLine.location.y = clickedY    
     currLine.location.yEnd = currLine.location.y 
-    // currLine.location.x = clickedX
-
+    currLine.location.x = clickedX
     currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
 
 }
