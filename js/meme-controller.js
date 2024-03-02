@@ -17,6 +17,7 @@ function renderMeme() {
 function coverCanvasWithImg(elImg) {
     const imgAspectRatio = elImg.width / elImg.height
     const containerWidth = elSecMemeEditor.querySelector('.canvas-container').offsetWidth
+    elImg.width = containerWidth
     const canvasHeight = containerWidth / imgAspectRatio
     gElCanvas.width = containerWidth
     gElCanvas.height = canvasHeight
