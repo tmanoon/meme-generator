@@ -5,10 +5,6 @@ function setImg(elImg) {
     gMeme.selectedImgId = +elImgNumId
 }
 
-function getImages() {
-    return gImgs
-}
-
 function addImgListeners() {
     const images = gElGallery.querySelectorAll('img')
     images.forEach(img => {
@@ -26,23 +22,29 @@ function addImgTouchListeners(img) {
     
 }
 
-function _createImages() {
-    gImgs = []
-    for (let i = 1; i <= 18; i++) {
-        gImgs.push(_createImage(i, `img/${i}.jpg`, []))
-    }
-}
-
-function _createImage(id, url, keywords) {
-    return {
-        id,
-        url,
-        keywords
-    }
-}
-
-// ontouchstart="onSelectImg(this, event)" onclick="onSelectImg(this, event)"
-
 function setBorderSize() {
     elBorder.style.width = (gElCanvas.width - 100) + 'px'
+}
+
+function getImages() {
+    gImgs = []
+    gImgs.push({id: 1,url: `img/1.jpg`, keywords: ['angry', 'political']})
+    gImgs.push({id: 2,url: `img/2.jpg`, keywords: ['animals', 'cute']})
+    gImgs.push({id: 3,url: `img/3.jpg`, keywords: ['baby', 'cute']})
+    gImgs.push({id: 4,url: `img/4.jpg`, keywords: ['animals', 'lazy']})
+    gImgs.push({id: 5,url: `img/5.jpg`, keywords: ['angry', 'baby']})
+    gImgs.push({id: 6,url: `img/6.jpg`, keywords: ['man', 'famous']})
+    gImgs.push({id: 7,url: `img/7.jpg`, keywords: ['baby', 'surprised']})
+    gImgs.push({id: 8,url: `img/8.jpg`, keywords: ['funny', 'man']})
+    gImgs.push({id: 9,url: `img/9.jpg`, keywords: ['baby', 'funny']})
+    gImgs.push({id: 10,url: `img/10.jpg`, keywords: ['political', 'funny']})
+    gImgs.push({id: 11,url: `img/11.jpg`, keywords: ['famous', 'love']})
+    gImgs.push({id: 12,url: `img/12.jpg`, keywords: ['israeli', 'famous', 'television']})
+    gImgs.push({id: 13,url: `img/13.jpg`, keywords: ['cute', 'famous']})
+    gImgs.push({id: 14,url: `img/14.jpg`, keywords: ['television', 'scary']})
+    gImgs.push({id: 15,url: `img/15.jpg`, keywords: ['television', 'famous']})
+    gImgs.push({id: 16,url: `img/16.jpg`, keywords: ['funny', 'man', 'television']})
+    gImgs.push({id: 17,url: `img/17.jpg`, keywords: ['political', 'man', 'scary']})
+    gImgs.push({id: 18,url: `img/18.jpg`, keywords: ['television', 'cute', 'famous']})
+    return gImgs
 }
