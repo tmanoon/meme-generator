@@ -46,5 +46,6 @@ function getImages() {
     gImgs.push({id: 16,url: `img/16.jpg`, keywords: ['funny', 'man', 'television']})
     gImgs.push({id: 17,url: `img/17.jpg`, keywords: ['political', 'man']})
     gImgs.push({id: 18,url: `img/18.jpg`, keywords: ['television', 'cute', 'famous']})
+    gImgs.push({id: 19,url: `img/19.jpg`, keywords: ['television', 'man']})
     return gImgs
 }

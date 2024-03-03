@@ -107,6 +107,7 @@
     .search-pic > .search-keywords {
         grid-row: 2;
         grid-column: 1;
+        flex-wrap: wrap;
     }
 }
 
@@ -119,7 +120,7 @@
 
     .canvas-container {
         grid-row: 1;
-        justify-self: center;
+        width: 100vw;
     }
     .user-edits {
         grid-row: 2;
