@@ -26,7 +26,7 @@
                             class="align-center luckiest self-center">Gallery</a></li>
                 </div>
                 <div class="search-pic">
-                    <input type="text" class="search-pic-input" placeholder="Search a keyword">
+                    <input type="text" name="keyword-txt" class="search-pic-input" placeholder="Search a keyword">
                     <ul class="search-keywords">
                         <li><button class="btn keyword-btn">Angry</button></li>
                         <li><button class="btn keyword-btn">Cute</button></li>
@@ -38,7 +38,6 @@
                         <li><button class="btn keyword-btn">Television</button></li>
                         <li><button class="btn keyword-btn">Funny</button></li>
                         <li><button class="btn keyword-btn">Man</button></li>
-                      
                     </ul>
                 </div>
             </ul>
@@ -55,7 +54,7 @@
                 <div class="border-of-text"></div>
             </div>
             <div class="user-edits">
-                <input type="text" class="text-input" id="text-input" placeholder="Add your text"
+                <input type="text" name="line-txt" class="text-input" id="text-input" placeholder="Add your text"
                     onkeyup="removeBorder()" oninput="onChangeText(event)">
                 <div class="second-row row">
                     <input type="color" value="#ffffff" oninput="onChangeTxtColor(event)">

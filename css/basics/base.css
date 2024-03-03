@@ -20,18 +20,3 @@ a {
 button {
     cursor: pointer;
 }
-
-html {
-    width: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary2);
-}
-
-main {
-    flex-grow: 1;
-}
