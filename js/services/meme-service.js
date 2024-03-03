@@ -200,7 +200,7 @@ function setLocations() {
 }
 
 function getCurrLine() {
-    return getCurrLine()
+    return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 function getLine(idx) {
