@@ -110,4 +110,18 @@
     }
 }
 
-@media (maxwidth: 340px) {}
+@media (max-width: 912px) {
+    .meme-editor {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0;
+    }
+
+    .canvas-container {
+        grid-row: 1;
+        justify-self: center;
+    }
+    .user-edits {
+        grid-row: 2;
+    }
+}
