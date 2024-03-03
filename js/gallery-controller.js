@@ -31,6 +31,7 @@ function renderGallery() {
 }
 
 function onSelectImg(ev) {
+    ev.stopPropagation()
     if (gElGallery.style.display != 'none') gElGallery.style.display = 'none'
     elSecMemeEditor.style.display = 'grid'
     setImg(ev.target)

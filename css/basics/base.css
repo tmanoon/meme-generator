@@ -24,3 +24,7 @@ button {
 html {
     width: 100%;
 }
+
+body {
+    min-height: 100vh;
+}
