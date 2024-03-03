@@ -20,8 +20,6 @@ const elSecMemeEditor = document.querySelector('.meme-editor')
 
 function renderGallery() {
     const images = getImages()
-    const keywords = loadFromStorage(keywordsDB)
-    if(!keywords) keywords = keywordsInit
     var strHTML = ''
     strHTML = images.map(img => {
         return `<img src="${img.url}" id="img${img.id}">`
@@ -39,5 +37,3 @@ function onSelectImg(ev) {
     setBorderSize()
     renderMeme()
 }
-
-gImgs.push({id: 18,url: `img/18.jpg`, keywords: ['television', 'cute', 'famous']})

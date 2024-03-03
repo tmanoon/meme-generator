@@ -51,3 +51,9 @@ function doUploadImg(imgDataUrl, onSuccess) {
     XHR.open('POST', '//ca-upload.com/here/upload.php')
     XHR.send(formData)
 }
+
+function resizeCanvas() {
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.clientWidth
+    renderMeme()
+}
