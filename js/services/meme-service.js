@@ -155,8 +155,9 @@ function deleteLine() {
 
 function addEmoji(emoji) {
     addLine()
+    const currLine = getCurrLine()
     gMeme.selectedLineIdx++
-    getCurrLine().txt = emoji
+    currLine.txt = emoji
     elTextInput.value += emoji
 
 }
@@ -165,16 +166,16 @@ function canvasMove(ev) {
     if (!isClicked) return
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
-    const currLine = getCurrLine()    
+    const currLine = getCurrLine()   
+    currLine.location.x = clickedX 
+    currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
     currLine.location.y = clickedY    
     currLine.location.yEnd = currLine.location.y 
-    currLine.location.x = clickedX
-    currLine.location.xEnd = currLine.location.x + gCtx.measureText(currLine.txt).width
-
 }
 
 function canvasUp() {
     isClicked = false
+    
 }
 
 function addLineOnCanvas(ev) {
