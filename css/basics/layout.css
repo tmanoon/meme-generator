@@ -23,8 +23,7 @@
     height: 100%;
     grid-column: 2;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    justify-items: start;
+    grid-template-rows: auto auto;
     gap: 1em;
     padding-inline-end: 1em;
 }
@@ -62,4 +61,16 @@ footer {
     padding-inline: 2.4em;
     gap: .5em;
     justify-content: center;
+}
+
+.search-keywords {
+    display: flex;
+    gap: .3em;
+}
+
+.btns-and-links {
+    grid-row: 1;
+    display: flex;
+    gap: 0.7em;
+    justify-content: flex-end;
 }

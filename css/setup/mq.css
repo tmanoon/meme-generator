@@ -52,7 +52,6 @@
     .sections-list {
         grid-column: 2;
         display: grid;
-        justify-content: start;
         width: 100%;
     }
     

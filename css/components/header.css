@@ -76,3 +76,7 @@
 .search-pic > .search-keywords {
     grid-column: 2;
 }
+
+.keyword-btn {
+    font-size: .7em;
+}
