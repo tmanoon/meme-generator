@@ -26,19 +26,8 @@
                             class="align-center luckiest self-center">Gallery</a></li>
                 </div>
                 <div class="search-pic">
-                    <input type="text" name="keyword-txt" class="search-pic-input" placeholder="Search a keyword">
-                    <ul class="search-keywords">
-                        <li><button class="btn keyword-btn">Angry</button></li>
-                        <li><button class="btn keyword-btn">Cute</button></li>
-                        <li><button class="btn keyword-btn">Political</button></li>
-                        <li><button class="btn keyword-btn">Animals</button></li>
-                        <li><button class="btn keyword-btn">Baby</button></li>
-                        <li><button class="btn keyword-btn">Famous</button></li>
-                        <li><button class="btn keyword-btn">Israeli</button></li>
-                        <li><button class="btn keyword-btn">Television</button></li>
-                        <li><button class="btn keyword-btn">Funny</button></li>
-                        <li><button class="btn keyword-btn">Man</button></li>
-                    </ul>
+                    <input type="text" name="keyword-txt" oninput="onKeywordInput(event)" class="search-pic-input" placeholder="Search a keyword">
+                    <ul class="search-keywords"></ul>
                 </div>
             </ul>
         </nav>
