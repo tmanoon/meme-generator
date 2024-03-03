@@ -1,13 +1,29 @@
 'use strict'
-
 var gImgs
+const keywordsDB = 'keywordsDB'
+var keywordsInit = {
+    angry: 0,
+    cute: 0,
+    political: 0,
+    animals: 0,
+    baby:0,
+    famous: 0,
+    israeli: 0,
+    television: 0,
+    funny: 0,
+    man: 0
+}
+
+const elSearchKeywords = document.querySelector('.search-keywords')
 const gElGallery = document.querySelector('.gallery')
 const elSecMemeEditor = document.querySelector('.meme-editor')
 
 function renderGallery() {
-    gImgs = getImages()
+    const images = getImages()
+    const keywords = loadFromStorage(keywordsDB)
+    if(!keywords) keywords = keywordsInit
     var strHTML = ''
-    strHTML = gImgs.map(img => {
+    strHTML = images.map(img => {
         return `<img src="${img.url}" id="img${img.id}">`
     }).join('')
     gElGallery.innerHTML = strHTML    
@@ -16,8 +32,6 @@ function renderGallery() {
     if (elSecMemeEditor.style.display != 'none') elSecMemeEditor.style.display = 'none'
 }
 
-
-
 function onSelectImg(ev) {
     if (gElGallery.style.display != 'none') gElGallery.style.display = 'none'
     elSecMemeEditor.style.display = 'grid'
@@ -25,3 +39,5 @@ function onSelectImg(ev) {
     setBorderSize()
     renderMeme()
 }
+
+gImgs.push({id: 18,url: `img/18.jpg`, keywords: ['television', 'cute', 'famous']})

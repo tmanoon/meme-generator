@@ -3,6 +3,7 @@
 function onInit() {
     renderGallery()
     addCanvasListeners()
+    window.addEventListener('resize', () => resizeCanvas())
 }
 
 function addCanvasListeners() {

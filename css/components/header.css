@@ -21,13 +21,13 @@
     font-size: 2.7rem;
 }
 
-.sections-list>li>a {
+.sections-list>li>a, .btns-and-links>li>a {
     color: #ffffff;
     font-size: 1.3em;
     text-shadow: 2px 0 #000, -2px 0 #161515, 0 0px #000, -2px 2px #000, -2px -2px #000, 1px -2px #000, -1px 2px #000, 0 -2px #000;
 }
 
-.sections-list>li>a:hover {
+.btns-and-links>li>a:hover {
     text-shadow: 2px 0 #3ead66, -2px 0 #d73535, 0 0px #482ee3, -2px 2px #e848d3, -2px -2px #48e5d7, 1px -2px #fff32d, -1px 2px #c07aff, 0 -2px #ffd273;
 }
 
@@ -35,14 +35,6 @@
     display: block;
     max-width: 100%;
     height: 3.875em;
-}
-
-.about-li {
-    grid-column: 3;
-}
-
-.gallery-li {
-    grid-column: 1;
 }
 
 .choose-yours {
@@ -63,14 +55,10 @@
     grid-row: 1;
 }
 
-.search-pic {
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: auto 1fr;
-}
-
 .search-pic > .search-pic-input {
     grid-column: 1;
+    height: 3em;
+    padding-inline: 1.5em;
 } 
 
 .search-pic > .search-keywords {

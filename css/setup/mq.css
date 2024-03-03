@@ -1,22 +1,21 @@
-@media (width < 739px) {
+/* @media (width < 739px) {
     .navigation-bar {
         padding-block: 3vw;
+    }
+
+    .canvas-container {
+        width: 100vw;
+        grid-row: 1;
     }
 
     .meme-editor {
         padding: 0;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 
     .logo-img {
         height: 1.875em;
-    }
-
-    .sections-list {
-        width: 50vw;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .sections-list > li> a {
@@ -50,8 +49,6 @@
     }
 
     .sections-list {
-        grid-column: 2;
-        display: grid;
         width: 100%;
     }
     
@@ -68,4 +65,4 @@
     .canvas-container {
         grid-column: 1;
     }
-}
+} */

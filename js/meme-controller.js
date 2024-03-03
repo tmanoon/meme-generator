@@ -8,24 +8,24 @@ const elTextInput = elUserEdits.querySelector('#text-input')
 function renderMeme() {
     const meme = getMeme()
     const selectedImg = gElGallery.querySelector(`#img${meme.selectedImgId}`)
-    coverCanvasWithImg(selectedImg)
+    // coverCanvasWithImg(selectedImg)
     addLocations()
     setText()
     setLocations()
 }
 
-function coverCanvasWithImg(elImg) {
-    const containerWidth = elSecMemeEditor.querySelector('.canvas-container').offsetWidth
-    elImg.width = containerWidth
-    const canvasHeight = elImg.height
-    gElCanvas.width = containerWidth
-    gElCanvas.height = canvasHeight
-    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-    canvasRightBorderSize = gElCanvas.width - (gElCanvas.width / 9)
-    canvasLeftBorderSize = gElCanvas.width / 9
-    canvasBottomBorderSize = gElCanvas.height - (gElCanvas.height / 9)
-    canvasTopBorderSize = gElCanvas.height / 9
-}
+// function coverCanvasWithImg(elImg) {
+//     const containerWidth = elSecMemeEditor.querySelector('.canvas-container').offsetWidth
+//     elImg.width = containerWidth
+//     const canvasHeight = elImg.height
+//     gElCanvas.width = containerWidth
+//     gElCanvas.height = canvasHeight
+//     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+//     canvasRightBorderSize = gElCanvas.width - (gElCanvas.width / 9)
+//     canvasLeftBorderSize = gElCanvas.width / 9
+//     canvasBottomBorderSize = gElCanvas.height - (gElCanvas.height / 9)
+//     canvasTopBorderSize = gElCanvas.height / 9
+// }
 
 function onChangeText(ev) {
     ev.stopPropagation()
@@ -132,4 +132,9 @@ function onImFlexible() {
     elSecMemeEditor.style.display = 'grid'
     setBorderSize()
     renderMeme()
+}
+
+function resizeCanvas() {
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.clientWidth
 }

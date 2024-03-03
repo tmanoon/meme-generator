@@ -6,7 +6,7 @@
 .canvas-container {
     position: relative;
     grid-column: 1;
-    width: 100%;
+    width: 50vw;
     height: auto;
 }
 
