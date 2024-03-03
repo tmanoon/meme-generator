@@ -51,7 +51,7 @@ function onKeywordBtnClick(ev) {
     ev.stopPropagation()
     filterImgs(ev.target.innerText)
     updateKeyword(ev.target.innerText)
-    setKeywordSize(ev.target.innerText, ev.target)
+    setKeywordSize(ev.target.innerText)
     renderGallery()
     saveToStorage(keywordsDB, keywords)
 }

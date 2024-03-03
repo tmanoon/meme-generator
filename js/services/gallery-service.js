@@ -85,7 +85,9 @@ function updateKeyword(keyword) {
     keywords[keyword]++
 }
 
-function setKeywordSize(keyword, keywordBtn) {
+function setKeywordSize(keyword) {
+    console.log(keyword)
+    const keywordBtn = elSearchKeywords.querySelector(`.${keyword}`)
     keywordBtn.style.fontSize = `${keywords[keyword] + 1}em`
     console.log(keywordBtn.style.fontSize,`${keywords[keyword]}` )
 }
