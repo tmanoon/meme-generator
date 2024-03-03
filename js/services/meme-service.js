@@ -4,12 +4,14 @@ let canvasRightBorderSize
 let canvasLeftBorderSize
 let canvasBottomBorderSize
 let canvasTopBorderSize
+
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     lines: [{ txt: 'Type your text', size: 30, color: 'white', fontFamily: 'Impact', textAlign: 'right' }]
 }
-let randTxt = ['יא מלעונה', 'תלך כפרה עלי', 'Are you a joke store???', 'A SMOOOOTH criminal', 'Hello Im Tova Gamzoo', 'Im a genie in a bottle', 'Your mother is so poor that she can\'t even pay attention']
+
+let randTxt = ['יא מלעונה', 'תלך כפרה עלי', 'Are you a joke store???', 'A SMOOOOTH criminal', 'Hello, Im Tova Gamzoo', 'Im a genie in a bottle', 'KEVIN POWELL ALL DAY']
 let isClicked = false
 
 function getMeme() {
@@ -18,11 +20,11 @@ function getMeme() {
 
 function imFlexible() {
     gMeme.selectedImgId = getRandomIntInclusive(0, gImgs.length - 1)
-    gMeme.lines[0].txt = randTxt[getRandomIntInclusive(0, randTxt.length - 1)]
+    getLine(0).txt = randTxt[getRandomIntInclusive(0, randTxt.length - 1)]
 }
 
 function changePosition(val) {
-    const currLine = gMeme.lines[gMeme.selectedLineIdx]
+    const currLine = getCurrLine()
     switch (val) {
         case 1:
             if ((currLine.location.y + canvasTopBorderSize) >= gElCanvas.height - canvasTopBorderSize) break
@@ -36,7 +38,7 @@ function changePosition(val) {
 }
 
 function changeTextAlign(alignVal) {
-    const currLine = gMeme.lines[gMeme.selectedLineIdx]
+    const currLine = getCurrLine()
     const textWidth = gCtx.measureText(currLine.txt).width
     switch (alignVal) {
         case 'right':
@@ -55,11 +57,11 @@ function changeTextAlign(alignVal) {
 }
 
 function changeFontSize(size) {
-    gMeme.lines[gMeme.selectedLineIdx].size = size
+    getCurrLine().size = size
 }
 
 function changeFontFamily(fontName) {
-    gMeme.lines[gMeme.selectedLineIdx].fontFamily = fontName
+    getCurrLine().fontFamily = fontName
 }
 
 function setLineTxt(userTxt) {
@@ -67,12 +69,12 @@ function setLineTxt(userTxt) {
         alert('No lines to type on. Add a line, please.')
         return
     }
-    gMeme.lines[gMeme.selectedLineIdx].txt = userTxt
-    addHighlight(gMeme.lines[gMeme.selectedLineIdx])
+    getCurrLine().txt = userTxt
+    addHighlight(getCurrLine())
 }
 
 function setTxtColor(val) {
-    gMeme.lines[gMeme.selectedLineIdx].color = val
+    getCurrLine().color = val
 }
 
 function setText() {
@@ -108,7 +110,7 @@ function removeBorder() {
 }
 
 function setSize(size) {
-    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    const selectedLine = getCurrLine()
     if (selectedLine.location.y >= 5) selectedLine.size += size
 }
 
@@ -152,15 +154,18 @@ function deleteLine() {
 }
 
 function addEmoji(emoji) {
-    gMeme.lines[gMeme.selectedLineIdx].txt += emoji
-    elTextInput.value += emoji + ''
+    addLine()
+    gMeme.selectedLineIdx++
+    getCurrLine().txt = emoji
+    elTextInput.value += emoji
+
 }
 
 function canvasMove(ev) {
     if (!isClicked) return
     const clickedX = ev.offsetX
     const clickedY = ev.offsetY
-    const currLine = gMeme.lines[gMeme.selectedLineIdx]    
+    const currLine = getCurrLine()    
     currLine.location.y = clickedY    
     currLine.location.yEnd = currLine.location.y 
     currLine.location.x = clickedX
@@ -177,13 +182,14 @@ function addLineOnCanvas(ev) {
     const clickedY = ev.offsetY
     elTextInput.value = ''
     addLine()
-    const lineAdded = gMeme.lines[gMeme.selectedLineIdx]
+    const lineAdded = getCurrLine()
     lineAdded.location = {
         x: clickedX,
         y: clickedY,
         xEnd: clickedX,
         yEnd: clickedY
     }
+    elTextInput.value = ''
 }
 
 function setLocations() {
@@ -191,4 +197,12 @@ function setLocations() {
         line.location.xEnd = line.location.x + gCtx.measureText(line.txt).width,
         line.location.yEnd = line.location.y + line.size
     })
+}
+
+function getCurrLine() {
+    return getCurrLine()
+}
+
+function getLine(idx) {
+    return gMeme.lines[idx]
 }

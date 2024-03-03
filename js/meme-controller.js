@@ -15,7 +15,6 @@ function renderMeme() {
 }
 
 function coverCanvasWithImg(elImg) {
-    const imgAspectRatio = elImg.width / elImg.height
     const containerWidth = elSecMemeEditor.querySelector('.canvas-container').offsetWidth
     elImg.width = containerWidth
     const canvasHeight = elImg.height
@@ -34,9 +33,10 @@ function onChangeText(ev) {
     renderMeme()
 }
 
-function onDownloadClick(elLink) {
+function onDownloadClick(ev) {
+    ev.stopPropagation()
     const imgContent = gElCanvas.toDataURL('image/jpeg')
-    elLink.href = imgContent
+    ev.target.href = imgContent
 }
 
 function onChangeTxtColor(ev) {

@@ -23,7 +23,7 @@ function addCanvasTouchListeners() {
     gElCanvas.addEventListener('touchend', onCanvasUp)
 }
 
-function onUploadImg() {
+function onUploadMeme() {
     const imgDataUrl = gElCanvas.toDataURL('image/jpeg') 
 
     function onSuccess(uploadedImgUrl) {
