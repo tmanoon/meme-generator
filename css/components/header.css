@@ -58,3 +58,21 @@
  .flexible > .flexible-btn:hover {
     text-shadow: 2px 0 #3ead66, -2px 0 #d73535, 0 0px #482ee3, -2px 2px #e848d3, -2px -2px #48e5d7, 1px -2px #fff32d, -1px 2px #c07aff, 0 -2px #ffd273;
 }
+
+.btns-and-links {
+    grid-row: 1;
+}
+
+.search-pic {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.search-pic > .search-pic-input {
+    grid-column: 1;
+} 
+
+.search-pic > .search-keywords {
+    grid-column: 2;
+}

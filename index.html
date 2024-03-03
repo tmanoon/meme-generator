@@ -19,9 +19,18 @@
                 </div>
             </div>
             <ul class="list sections-list">
-                <li class="align-center flexible"><button class="fa flexible-btn" onclick="onImFlexible()">I'm Flexible</button></li>
-                <li class="align-center gallery-li"><a href="#" onclick="renderGallery()" class="align-center self-center">Gallery</a></li>
-                <li class="align-center about-li"><a href="#" class="align-center self-center">About</a></li>
+                <div class="btns-and-links">
+                    <li class="align-center flexible"><button class="fa flexible-btn" onclick="onImFlexible()">I'm
+                            Flexible</button></li>
+                    <li class="align-center gallery-li"><a href="#" onclick="renderGallery()"
+                            class="align-center self-center">Gallery</a></li>
+                    <li class="align-center about-li"><a href="#" class="align-center self-center">About</a></li>
+                </div>
+                <div class="search-pic">
+                    <input type="text" class="search-pic-input" placeholder="Search a keyword">
+                    <ul class="search-keywords">
+                    </ul>
+                </div>
             </ul>
         </nav>
     </header>
@@ -44,9 +53,9 @@
                     <button class="btn decrease-font-btn fa" onclick="onSizeBtn(event, -1)"></button>
                 </div>
                 <div class="third-row row">
-                <button class="btn add-line-btn fa" onclick="onAddLine(event)"></button>
-                <button class="btn switch-line-btn fa" onclick="onSwitchLine(event)"></button>
-            </div>
+                    <button class="btn add-line-btn fa" onclick="onAddLine(event)"></button>
+                    <button class="btn switch-line-btn fa" onclick="onSwitchLine(event)"></button>
+                </div>
                 <div class="second-set-controls fourth-row row">
                     <select name="font-select" id="select-font" onchange="onChangeFontFamily(event)">
                         <option value="Impact">Impact</option>
@@ -68,8 +77,8 @@
                     </select>
                     <button class="btn position-text-up fa" onclick="onPositionChange(event, -1)"></button>
                     <button class="btn position-text-down fa" onclick="onPositionChange(event, 1)"></button>
-                    </div>
-                    <div class="fifth-row row">
+                </div>
+                <div class="fifth-row row">
                     <button class="btn delete-btn luckiest" onclick="onDeleteLine(event)">Delete Line</button>
                     <select id="emoji-select" onchange="onAddEmoji(event)">
                         <option value="🥸">🥸</option>

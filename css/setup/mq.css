@@ -51,8 +51,9 @@
 
     .sections-list {
         grid-column: 2;
-        display: flex;
-        justify-content: end;
+        display: grid;
+        justify-content: start;
+        width: 100%;
     }
     
     .sections-list > li > a {

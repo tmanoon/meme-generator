@@ -22,8 +22,9 @@
     margin: 0;
     height: 100%;
     grid-column: 2;
-    display: flex;
-    justify-content: end;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: start;
     gap: 1em;
     padding-inline-end: 1em;
 }
